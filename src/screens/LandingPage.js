@@ -12,7 +12,7 @@ function LandingPage (){
         
      <View style={styles.container}>            
      
-     <ImageBackground source={afrcan} style={styles.image}>
+     <ImageBackground source={african} style={styles.image}>
 
 
      </ImageBackground>
