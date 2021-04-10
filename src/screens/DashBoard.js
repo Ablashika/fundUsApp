@@ -1,7 +1,10 @@
 import React, {useEffect} from 'react'
-import { StyleSheet, Text, View, Image,TextInput, TouchableOpacity, FlatList,  
+import { StyleSheet, Text, View, Image,TextInput, TouchableOpacity, FlatList,   
 } from 'react-native';
-import afrcan from "../../assets/africanshop.jpg"
+import africanshop from "../../assets/africanshop.jpg"
+
+
+
 
 
 function Dashboard (){
@@ -18,7 +21,7 @@ function Dashboard (){
   
 
   <View style={styles.imagebox}>
-      <Image source={afrcan}  style={styles.image} >
+      <Image source={africanshop}  style={styles.image} >
 
       </Image>
   </View>
@@ -34,6 +37,10 @@ function Dashboard (){
 
          <Text>Already have an account?</Text>
      </View>
+
+     
+    
+     
 
     
 
