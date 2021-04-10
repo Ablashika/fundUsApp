@@ -30,7 +30,7 @@ function LandingPage (){
              </TouchableOpacity>
              <TouchableOpacity style={styles.signUpBox}>
                  <Text>
-                    I am here to support
+                    here to support!s
                  </Text>
              </TouchableOpacity>
          </View>

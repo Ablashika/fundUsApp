@@ -10,16 +10,11 @@ function SignUpScreen (){
         
      <View style={styles.container}>            
      
-     <View style={styles.redContainer}>            
      
-
-  
-     </View>
-
      <View style={styles.textContainer}>            
      
-        <Text>WELCOME!</Text>
-        <Text>Pleas provide the following details for your new account</Text>
+        <Text style={{fontSize:40, fontWeight:'bold',}}> WELCOME!</Text>
+        <Text>Please provide the following details for your new account</Text>
      </View>
 
 
@@ -27,33 +22,69 @@ function SignUpScreen (){
 
      <View style={styles. blueContainer}>            
      
+     
+     
+                
      <View>
-         <Text>Full name</Text>
-         <View  style={styles.placeholder}></View>
+         <Text style={{
+            fontWeight: "bold",
+            fontSize: 15,
+            // marginHorizontal: 35, 
+            marginBottom: 7
+          }}>Email Address</Text>
+         <View  style={{
+            backgroundColor: '#E2E6EE',
+            borderRadius: 10,
+            width: 312,
+            height: 35,
+            marginBottom:20}}></View>
      </View>
+     
+     <View style={{
+          flexDirection: "column",
+          alignItems: "flex-start",
+          justifyContent: "space-between"
+            }}>
+          <Text style={{
+            fontWeight: "bold",
+            fontSize: 15,
+            marginHorizontal: 35, 
+            marginBottom: 7
+          }}
+          >Password
+          </Text>
 
-     <View>
-         <Text>Full name</Text>
-         <View  style={styles.placeholder}></View>
-     </View>
-     <View>
-         <Text>Full name</Text>
-         <View  style={styles.placeholder}></View>
-     </View>
-     <View>
-         <Text>Full name</Text>
-         <View  style={styles.placeholder}></View>
-     </View>
+          <TextInput style={{
+            alignSelf: 'center',
+            justifyContent: 'center',
+            marginHorizontal: 30,
+            // marginBottom: 20,
+            borderColor: 'gray',
+            backgroundColor: '#E2E6EE',
+            borderRadius: 10,
+            width: 312,
+            height: 35
+          }}
+                    placeholderTextColor="#aaaaaa"
+                    placeholder="  Password"
+                    secureTextEntry={true}
+                />
+            </View>
+            {/* <View style={{backgroundColor:"#e6e7e8",height:2,width:330,marginBottom:10,marginLeft:15}}></View> */}
+
 
   
      </View>
 
      <View style={styles.signUpBox}>
-         <View style={styles.signUpText} >
-             <Text>SIGN UP</Text>
-         </View>
+     <View>
+                <TouchableOpacity  onPress={() => { }}style={styles.buttonContainer}>
+                    <Text style={styles.buttonText}>NEXT</Text>
+                </TouchableOpacity>
+            </View>
 
-         <Text>Already have an account?</Text>
+                <Text>Already have an account?</Text>
+                
      </View>
 
     
@@ -73,14 +104,14 @@ const styles = StyleSheet.create({
     
     },
 
-    redContainer:{
-        backgroundColor:"#FD513B",
-        width:400,
-        alignItems:"center",
-        justifyContent:"center",
+    // redContainer:{
+    //     backgroundColor:"#FD513B",
+    //     width:400,
+    //     alignItems:"center",
+    //     justifyContent:"center",
        
-        flex:1
-    },
+    //     flex:1
+    // },
 
     textContainer:{
         backgroundColor:"#fff",
@@ -98,7 +129,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
        
-        flex:3,
+        // flex:3,
     },
 
     placeholder:{
@@ -125,7 +156,26 @@ const styles = StyleSheet.create({
         height:50,
         width:250,
       borderRadius:30,
-    }
+    },
+    buttonText: {
+        
+        fontSize: 18,
+      alignSelf: 'center',
+        fontWeight:'bold'
+    },buttonContainer: {
+        height: 40,
+        width: 217,
+        // backgroundColor: "#FFFCF0",
+        justifyContent: "center",
+      alignSelf: "center",
+        alignContent:'center',
+        borderRadius: 100,
+        // marginLeft: 20,
+        marginTop:60,
+      marginBottom: 20,
+      borderWidth: 2,
+        borderColor:'#FD513B'
+    },
 
 
       

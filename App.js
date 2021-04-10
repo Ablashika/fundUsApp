@@ -7,6 +7,10 @@ import PaymentScreen from './src/screens/PaymentScreen';
 import LandingPage from './src/screens/LandingPage';
 import ProgressBar from './src/screens/ProgressBar';
 import WallPage from './src/screens/WallPage';
+import LogInScreen from './src/screens/LogInScreen'
+import SignUpScreenB from './src/screens/SignUpScreenB';
+
+
 
 export default function App() {
   return (
