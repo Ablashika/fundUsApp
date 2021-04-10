@@ -12,7 +12,7 @@ function LandingPage (){
         
      <View style={styles.container}>            
      
-     <ImageBackground source={african} style={styles.image}>
+     <ImageBackground source={afrcan} style={styles.image}>
 
 
      </ImageBackground>
@@ -35,7 +35,9 @@ function LandingPage (){
              </TouchableOpacity>
          </View>
 
-         <Text style={styles.learnMoreText}>Learn more</Text>
+        <TouchableOpacity>
+        <Text style={styles.learnMoreText}>Learn more</Text>
+        </TouchableOpacity>
 
     </View>
 
