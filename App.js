@@ -15,12 +15,15 @@ import SignUpScreenB from './src/screens/SignUpScreenB';
 export default function App() {
   return (
     <View style={styles.container}>
-      <WallPage/>
+      {/* <SignUpScreenB/> */}
+      <LogInScreen/>
+      {/* <WallPage/> */}
      {/* <ProgressBar/> */}
      {/* <Dashboard/> */}
      {/* <PaymentScreen/> */}
      {/* <SignUpScreen/> */}
      {/* <LandingPage/> */}
+     
       <StatusBar style="auto" />
     </View>
   );
