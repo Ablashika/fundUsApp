@@ -5,14 +5,18 @@ import SignUpScreen from '../fundUsApp/src/screens/SignUpScreen'
 import Dashboard from './src/screens/DashBoard';
 import PaymentScreen from './src/screens/PaymentScreen';
 import LandingPage from './src/screens/LandingPage';
+import ProgressBar from './src/screens/ProgressBar';
+import WallPage from './src/screens/WallPage';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <WallPage/>
+     {/* <ProgressBar/> */}
      {/* <Dashboard/> */}
      {/* <PaymentScreen/> */}
      {/* <SignUpScreen/> */}
-     <LandingPage/>
+     {/* <LandingPage/> */}
       <StatusBar style="auto" />
     </View>
   );
