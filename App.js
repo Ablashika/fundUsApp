@@ -7,6 +7,7 @@ import PaymentScreen from './src/screens/PaymentScreen';
 import LandingPage from './src/screens/LandingPage';
 import LogInScreen from './src/screens/LogInScreen'
 import SignUpScreenB from './src/screens/SignUpScreenB';
+import SignUpScreenC from './src/screens/SignUpScreenC';
 
 
 
@@ -18,7 +19,8 @@ export default function App() {
      {/* <SignUpScreen/> */}
       {/* <LandingPage/> */}
       {/* <LogInScreen/> */}
-      <SignUpScreenB/>
+      {/* <SignUpScreenB /> */}
+      <SignUpScreenC/>
       <StatusBar style="auto" />
     </View>
   );
