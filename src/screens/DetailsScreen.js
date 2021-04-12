@@ -43,7 +43,7 @@ function DetailsScreen (){
 
      
   <View style={styles.lastBox}>
- 
+    <View style={}><Text>support</Text></View>
   </View>
 
      
