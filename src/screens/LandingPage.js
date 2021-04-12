@@ -35,7 +35,9 @@ function LandingPage (){
              </TouchableOpacity>
          </View>
 
-         <Text style={styles.learnMoreText}>Learn more</Text>
+        <TouchableOpacity>
+        <Text style={styles.learnMoreText}>Learn more</Text>
+        </TouchableOpacity>
 
     </View>
 
