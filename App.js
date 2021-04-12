@@ -5,6 +5,7 @@ import SignUpScreen from '../fundUsApp/src/screens/SignUpScreen'
 import Dashboard from './src/screens/DashBoard';
 import PaymentScreen from './src/screens/PaymentScreen';
 import LandingPage from './src/screens/LandingPage';
+import DetailsScreen from './src/screens/DetailsScreen';
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
      {/* <Dashboard/> */}
      {/* <PaymentScreen/> */}
      {/* <SignUpScreen/> */}
-     <LandingPage/>
+     {/* <LandingPage/> */}
+     <DetailsScreen/>
       <StatusBar style="auto" />
     </View>
   );
