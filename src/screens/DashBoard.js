@@ -2,6 +2,10 @@ import React, {useEffect} from 'react'
 import { StyleSheet, Text, View, Image,TextInput, TouchableOpacity, FlatList,   
 } from 'react-native';
 import africanshop from "../../assets/africanshop.jpg"
+import * as Progress from 'react-native-progress';
+import { Entypo } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
 
@@ -14,29 +18,31 @@ function Dashboard (){
      <View style={styles.container}>            
      
      <View style={styles.redContainer}>            
-     
+     <Text style={{ color:"white", fontWeight:"bold"}}>My dashboard</Text>
 
-  
      </View>
   
 
   <View style={styles.imagebox}>
       <Image source={africanshop}  style={styles.image} >
-
       </Image>
+  </View>
+     
+  <View style={styles.textbox}>
+      <Text  style={{ margin:10, fontWeight:"bold"}}>Helping ISS get back on her feet</Text>
+ <Progress.Bar progress={0.4} width={250} color={"#FD513B"} />
   </View>
 
 
      
+  <View style={styles.lastBox}>
+  <TouchableOpacity><Entypo name="home" size={24} color="black" /></TouchableOpacity>
+  
+  <TouchableOpacity><FontAwesome5 name="pen" size={24} color="black" /></TouchableOpacity>
+ <TouchableOpacity><Ionicons name="md-settings" size={24} color="black" /></TouchableOpacity>
+  </View>
 
-
-     <View style={styles.signUpBox}>
-         <View style={styles.signUpText} >
-             <Text>SIGN UP</Text>
-         </View>
-
-         <Text>Already have an account?</Text>
-     </View>
+     
 
      
     
@@ -65,59 +71,15 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
        
-        flex:1
-    },
-
-    textContainer:{
-        backgroundColor:"#fff",
-        
-        alignItems:"center",
-        justifyContent:"center",
-       
-        flex:1,
-    },
-
-   
-    blueContainer:{
-        backgroundColor:"#fff",
-        
-        alignItems:"center",
-        justifyContent:"center",
-       
-        flex:3,
-    },
-
-    placeholder:{
-        backgroundColor:"#E2E6EE",
-        height:40,
-        width:300,
-        marginBottom:20,
-        borderRadius:30,
-    },
-
-    signUpBox:{
-        flex:1,
-        alignItems:"center",
-        justifyContent:"center",
-       
-
-    },
-
-    signUpText:{
-        alignItems:"center",
-        justifyContent:"center",
-        borderColor:"#FD513B",
-        borderWidth:2,
-        height:50,
-        width:250,
-      borderRadius:30,
+        flex:0.8
     },
     imagebox:{
-        flex:5,
+        flex:3,
         borderRadius:100,
         marginTop:30,
         height:400,
         width:300,
+        backgroundColor:"red"
 
     },
 
@@ -126,7 +88,30 @@ const styles = StyleSheet.create({
         width:300,
         borderRadius:30,
 
+    },
+
+    textbox:{
+        flex:1.4,
+        marginTop:20,
+        height:20,
+        width:400,
+        // backgroundColor:"blue",
+        justifyContent:"center",
+        alignItems:"center"
+    },
+
+    lastBox:{
+        flexDirection:"row",
+        flex:0.8,
+        alignItems:"center",
+        justifyContent:"center",
+        width:400,
+        justifyContent:"space-evenly",
+        borderWidth:0.5,
+        borderColor:"grey"
     }
+
+    
 
 
       
