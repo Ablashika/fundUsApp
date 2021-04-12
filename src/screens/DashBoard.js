@@ -11,16 +11,16 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 
 
-function Dashboard (){
+function Dashboard ({navigation}){
     
     return(
         
      <View style={styles.container}>            
      
-     <View style={styles.redContainer}>            
+     {/* <View style={styles.redContainer}>            
      <Text style={{ color:"white", fontWeight:"bold"}}>My dashboard</Text>
 
-     </View>
+     </View> */}
   
 
   <View style={styles.imagebox}>

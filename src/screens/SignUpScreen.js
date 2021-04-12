@@ -4,17 +4,17 @@ import { StyleSheet, Text, View, Image,TextInput, TouchableOpacity, FlatList,
 
 
 
-function SignUpScreen (){
+function SignUpScreen ({navigation}){
     
     return(
         
      <View style={styles.container}>            
      
-     <View style={styles.redContainer}>            
+     {/* <View style={styles.redContainer}>            
      
 
   
-     </View>
+     </View> */}
 
      <View style={styles.textContainer}>            
      
@@ -48,13 +48,17 @@ function SignUpScreen (){
   
      </View>
 
-     <View style={styles.signUpBox}>
+     <TouchableOpacity
+       onPress={()=>{
+                 navigation.navigate("DashBoard")
+            }}
+     style={styles.signUpBox}>
          <View style={styles.signUpText} >
              <Text>SIGN UP</Text>
          </View>
 
          <Text>Already have an account?</Text>
-     </View>
+     </TouchableOpacity>
 
     
 
