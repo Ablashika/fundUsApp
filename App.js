@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack'
 import {NavigationContainer} from '@react-navigation/native'
 import SignUpScreen from './src/screens/SignUpScreen'
 import DashBoard from './src/screens/DashBoard';
+import SignUpScreenB from './src/screens/SignUpScreenB'
 
 
 export default function App() {
@@ -40,6 +41,18 @@ const  Stack = createStackNavigator()
            
   }}
    name="DashBoard" component={DashBoard}/>
+    <Stack.Screen 
+   options={{
+    title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="SignUpScreenB" component={SignUpScreenB}/>
    {/* <Stack.Screen name="SignInScreen" component={SignInScreen}/>
    <Stack.Screen
       options={({ navigation }) => ({
