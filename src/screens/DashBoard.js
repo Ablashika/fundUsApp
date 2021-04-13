@@ -38,7 +38,9 @@ function Dashboard ({navigation}){
   <View style={styles.lastBox}>
   <TouchableOpacity><Entypo name="home" size={24} color="black" /></TouchableOpacity>
   
-  <TouchableOpacity><FontAwesome5 name="pen" size={24} color="black" /></TouchableOpacity>
+  <TouchableOpacity onPress={()=>{
+                 navigation.navigate("SignUpScreenB")
+            }}><FontAwesome5 name="pen" size={24} color="black" /></TouchableOpacity>
  <TouchableOpacity><Ionicons name="md-settings" size={24} color="black" /></TouchableOpacity>
   </View>
 

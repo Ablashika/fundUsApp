@@ -3,7 +3,7 @@ import { Button, Image, View, Platform,Text,StyleSheet,TouchableOpacity } from '
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 
-export default function SignUpScreenB() {
+export default function SignUpScreenB({navigation}) {
   const [image, setImage] = useState(null);
 
   useEffect(() => {

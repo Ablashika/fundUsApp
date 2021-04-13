@@ -6,6 +6,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import SignUpScreen from './src/screens/SignUpScreen'
 import DashBoard from './src/screens/DashBoard';
 import SignUpScreenB from './src/screens/SignUpScreenB'
+import LandingPage from './src/screens/LandingPage';
 
 
 export default function App() {
@@ -14,6 +15,20 @@ const  Stack = createStackNavigator()
   return (
     <NavigationContainer> 
       <Stack.Navigator>
+
+      <Stack.Screen 
+   
+   options={{
+    // title:"",
+    // headerStyle:{
+    //   backgroundColor:"#FD513B"
+    // },
+    
+  
+           
+  }}
+   
+   name="LandingPage" component={LandingPage}/>      
    <Stack.Screen 
    
    options={{
@@ -43,7 +58,7 @@ const  Stack = createStackNavigator()
    name="DashBoard" component={DashBoard}/>
     <Stack.Screen 
    options={{
-    title:"My DashBoad",
+    // title:"My DashBoad",
     headerStyle:{
       backgroundColor:"#FD513B"
     },
