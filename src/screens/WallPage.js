@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 
 
-function WallPage (){
+function WallPage ({navigation}){
     
     return(
         
@@ -20,9 +20,53 @@ function WallPage (){
 
   
      </View>
+      <ScrollView>
+    <View style={{ flex:4, justifyContent:"center", alignItems:"center", marginTop:-10}}>
 
-  <View style={styles.scroll}>
-  <ScrollView> 
+ 
+  <View style={styles.imagebox}>
+    
+    <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
+
+  
+   </ImageBackground> 
+   <View style={styles.textShow}>
+    
+         <Text style={styles.textOp}>Fashion Design</Text>
+         <Text style={styles.textO}>Help iss get back on her feet</Text>
+
+         <TouchableOpacity 
+            onPress={()=>{
+              navigation.navigate("DetailsScreen")
+          }}
+         
+         style={styles.containerText}><Text>View Project</Text></TouchableOpacity>
+         
+    
+  </View>
+  
+   
+  
+    </View> 
+   <View style={styles.imagebox}>
+    
+    <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
+
+  
+   </ImageBackground> 
+   <View style={styles.textShow}>
+    
+         <Text style={styles.textOp}>Fashion Design</Text>
+         <Text style={styles.textO}>Help iss get back on her feet</Text>
+
+         <TouchableOpacity style={styles.containerText}><Text>View Project</Text></TouchableOpacity>
+         
+    
+  </View>
+  
+   
+  
+    </View> 
   <View style={styles.imagebox}>
     
     <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
@@ -41,48 +85,10 @@ function WallPage (){
   
    
   
-    </View>
-  <View style={styles.imagebox}>
-    
-    <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
-
-  
-   </ImageBackground> 
-   <View style={styles.textShow}>
-    
-         <Text style={styles.textOp}>Fashion Design</Text>
-         <Text style={styles.textO}>Help iss get back on her feet</Text>
-
-         <TouchableOpacity style={styles.containerText}><Text>View Project</Text></TouchableOpacity>
-         
-    
-  </View>
-  
-   
-  
-    </View>
-  <View style={styles.imagebox}>
-    
-    <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
-
-  
-   </ImageBackground> 
-   <View style={styles.textShow}>
-    
-         <Text style={styles.textOp}>Fashion Design</Text>
-         <Text style={styles.textO}>Help iss get back on her feet</Text>
-
-         <TouchableOpacity style={styles.containerText}><Text>View Project</Text></TouchableOpacity>
-         
-    
-  </View>
-  
-   
-  
-    </View>
+    </View> 
   
 
-    <View style={styles.imagebox}>
+     <View style={styles.imagebox}>
     
     <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
 
@@ -104,17 +110,20 @@ function WallPage (){
 
     
   
-  </ScrollView>
+   
+     
+ 
   </View>  
 
-     
+  </ScrollView>
+<View style={{flex:2, backgroundColor:"white", marginTop:-80, justifyContent:"center"}}>
   <View style={styles.lastBox}>
   <View><Entypo name="home" size={24} color="black" /></View>
   <View><Entypo name="share" size={24} color="black" /></View>
   <View><Ionicons name="md-search" size={24} color="black" /></View>
   <View><Ionicons name="ios-settings" size={24} color="black" /></View>
   </View>
-  
+  </View> 
     </View>
 
 
@@ -126,16 +135,16 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+      flex:1
+      ,
     
     },
 
     redContainer:{
-        backgroundColor:"#FD513B",
-        width:400,
-        alignItems:"center",
-        justifyContent:"center",
-        flex:0.5
+      flex:1
     },
+
+
 
     image:{
         
@@ -143,28 +152,23 @@ const styles = StyleSheet.create({
         width:320,
         justifyContent:"center",
         // resizeMode: "cover",
-    
+       
         opacity:0.5
       },
 
       imagebox:{
-        height:350,
+        height:380,
         width:320,
         justifyContent:"center",
         margin:20,
         alignContent:"center",
+       
         
 
          
       },
 
-      scroll:{
-          flex:5,
-          justifyContent:"center",
-        
-        
-
-      },
+    
 
       textShow:{
           height:300,
@@ -174,7 +178,6 @@ const styles = StyleSheet.create({
         //  flexDirection:"column",
          borderRadius:30,
          alignContent:"center",
-         flex:6
           
       },
     
@@ -182,7 +185,7 @@ const styles = StyleSheet.create({
       textOp:{
           color:"white",
           marginLeft:20,
-          marginTop:30
+          // marginTop:30
 
       },
    
@@ -207,11 +210,13 @@ const styles = StyleSheet.create({
 
     lastBox:{
         flexDirection:"row",
-        flex:0.5,
         alignItems:"center",
         justifyContent:"center",
         width:400,
-        justifyContent:"space-evenly"
+        // height:100,
+        justifyContent:"space-evenly",
+        
+       
     }
     
    

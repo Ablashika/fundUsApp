@@ -8,6 +8,10 @@ import DashBoard from './src/screens/DashBoard';
 import SignUpScreenB from './src/screens/SignUpScreenB'
 import LandingPage from './src/screens/LandingPage';
 import LogInScreen from './src/screens/LogInScreen';
+import WallPage from './src/screens/WallPage'
+import DetailsScreen from './src/screens/DetailsScreen';
+import PaymentScreen from './src/screens/PaymentScreen';
+import ThankYouScreen from './src/screens/ThankYouScreen';
 
 
 export default function App() {
@@ -83,28 +87,59 @@ const  Stack = createStackNavigator()
            
   }}
    name="SignUpScreenB" component={SignUpScreenB}/>
-   {/* <Stack.Screen name="SignInScreen" component={SignInScreen}/>
-   <Stack.Screen
-      options={({ navigation }) => ({
-        title:"Notifaction",
-        headerStyle:{
-          backgroundColor:"white"
-        },
-        headerTintColor:"black",
-        headerTitleAlign:"center",
-        headerRight:()=>(
-          <TouchableOpacity
-          onPress={()=>{
-            navigation.navigate("ProfileDetails")
-        }}
-          style={styles.profileContainer}><AntDesign name="arrowleft" size={24} color="black" /></TouchableOpacity>  
-         )
-         ,
-               
-      })} 
-   name="NotificationScreen" component={NotificationScreen}/>
-   <Stack.Screen name="ProfileDetails" component={ProfileDetails}/>
-   <Stack.Screen name="ProfileScreen" component={ProfileScreen}/> */}
+
+<Stack.Screen 
+   options={{
+    // title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="WallPage" component={WallPage}/>
+   
+<Stack.Screen 
+   options={{
+    // title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="DetailsScreen" component={DetailsScreen}/>
+      
+<Stack.Screen 
+   options={{
+    // title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="PaymentScreen" component={PaymentScreen}/>
+
+      
+<Stack.Screen 
+   options={{
+    
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="ThankYouScreen" component={ThankYouScreen}/>
 
 </Stack.Navigator>
 

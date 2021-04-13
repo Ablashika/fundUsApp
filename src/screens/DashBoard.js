@@ -36,7 +36,11 @@ function Dashboard ({navigation}){
 
      
   <View style={styles.lastBox}>
-  <TouchableOpacity><Entypo name="home" size={24} color="black" /></TouchableOpacity>
+  <TouchableOpacity 
+   onPress={()=>{
+    navigation.navigate("WallPage")
+}}
+  ><Entypo name="home" size={24} color="black" /></TouchableOpacity>
   
   <TouchableOpacity onPress={()=>{
                  navigation.navigate("SignUpScreenB")
