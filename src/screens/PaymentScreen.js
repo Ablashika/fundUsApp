@@ -55,7 +55,7 @@ function PaymentScreen ({navigation}){
      <View style={styles.signUpBox}>
          <TouchableOpacity 
            onPress={()=>{
-            navigation.navigate("ThankYou")
+            navigation.navigate("ThankYouScreen")
        }}
          style={styles.signUpText} >
              <Text>Confirm Payment</Text>
