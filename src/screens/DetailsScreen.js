@@ -11,35 +11,39 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 
 
-function Dashboard ({navigation}){
+function DetailsScreen (){
     
     return(
         
      <View style={styles.container}>            
      
-     {/* <View style={styles.redContainer}>            
+     <View style={styles.redContainer}>            
      <Text style={{ color:"white", fontWeight:"bold"}}>My dashboard</Text>
 
-     </View> */}
+     </View>
   
 
   <View style={styles.imagebox}>
       <Image source={africanshop}  style={styles.image} >
       </Image>
   </View>
+
+      <View style={styles.sissBox}>
+      <Text style={{ marginTop:20, fontWeight:"bold"}}>SISS Fashion</Text>
+      <Text >Soliciting funds for a new mwchanical sewing machine</Text>
+      </View>
      
   <View style={styles.textbox}>
-      <Text  style={{ margin:10, fontWeight:"bold"}}>Helping ISS get back on her feet</Text>
- <Progress.Bar progress={0.4} width={250} color={"#FD513B"} />
+      <Text  style={{ margin:10}}>amount raised</Text>
+      <Text style={{ marginTop:10, fontWeight:"bold"}}> 150gh</Text>
+ <Progress.Bar style={{ marginTop:10}}  progress={0.4} width={250} color={"#FD513B"} />
+ <Text style={{ marginTop:5,}}>Goal:5000ghc</Text>
   </View>
 
 
      
   <View style={styles.lastBox}>
-  <TouchableOpacity><Entypo name="home" size={24} color="black" /></TouchableOpacity>
-  
-  <TouchableOpacity><FontAwesome5 name="pen" size={24} color="black" /></TouchableOpacity>
- <TouchableOpacity><Ionicons name="md-settings" size={24} color="black" /></TouchableOpacity>
+    <View style={}><Text>support</Text></View>
   </View>
 
      
@@ -74,42 +78,49 @@ const styles = StyleSheet.create({
         flex:0.8
     },
     imagebox:{
-        flex:3,
-        borderRadius:100,
-        marginTop:30,
-        height:400,
-        width:300,
-        backgroundColor:"red"
+        flex:2,
+        marginTop:10,
+        height:200,
+        width:360,   
+        width:400,
+        alignItems:"center",
+        justifyContent:"center",
+       
 
     },
 
     image:{
-        height:350,
-        width:300,
-        borderRadius:30,
+        height:200,
+        width:350,
+        justifyContent:"center",
+        alignItems:"center"
 
     },
 
     textbox:{
-        flex:1.4,
+        flex:1.6,
         marginTop:20,
         height:20,
         width:400,
-        // backgroundColor:"blue",
         justifyContent:"center",
         alignItems:"center"
     },
 
-    lastBox:{
-        flexDirection:"row",
+    sissBox:{
         flex:0.8,
-        alignItems:"center",
-        justifyContent:"center",
-        width:400,
-        justifyContent:"space-evenly",
-        borderWidth:0.5,
-        borderColor:"grey"
+        width:250,
+        justifyContent:"flex-end",
+        alignItems:"flex-start",
+        marginLeft:-100
+    },
+   
+
+    lastBox:{
+        flex:1
     }
+
+
+   
 
     
 
@@ -118,4 +129,4 @@ const styles = StyleSheet.create({
 }) 
 
 
-export default Dashboard;
+export default DetailsScreen;

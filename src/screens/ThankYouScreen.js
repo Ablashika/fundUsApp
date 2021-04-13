@@ -11,14 +11,15 @@ export default class ThankYouScreen extends Component {
     render() {
         return (
             <View
+                
                 style={{
                     
                     backgroundColor: 'white'
                 }}
             >
                 <Text>OBEYE OBEYIE</Text>
-                {/* <LottieView
-                    source={require('../../assets/afri')}
+                <LottieView
+                    source={require('../assets/splash.json')}
                     autoPlay
                     loop={false}
                     speed={0.5}
@@ -26,7 +27,7 @@ export default class ThankYouScreen extends Component {
                         console.log('Animation Finished!')
                         this.props.navigation.replace('Home');
                     }}
-                /> */}
+                />
             </View>
         )
     }
