@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
 // import { AntDesign } from '@expo/vector-icons';
 
-export default function LogInScreen() {
+export default function LogInScreen({navigation}) {
     return (
         <View style={styles.mainContainer}>
             {/* <Image source={require('/Users/mac/Desktop/reactnative/AmpersandApp/ampersandapp/assets/officesetup.jpg')} style={styles.image} /> */}
@@ -74,7 +74,11 @@ export default function LogInScreen() {
             {/* <View style={{backgroundColor:"#e6e7e8",height:2,width:330,marginBottom:10,marginLeft:15}}></View> */}
 
             <View>
-                <TouchableOpacity  onPress={() => { }}style={styles.buttonContainer}>
+                <TouchableOpacity  
+                  onPress={()=>{
+                    navigation.navigate("DashBoard")
+               }}
+                style={styles.buttonContainer}>
                     <Text style={styles.buttonText}>sign in</Text>
                 </TouchableOpacity>
             </View>

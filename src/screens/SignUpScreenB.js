@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Platform,Text,StyleSheet,TouchableOpacity } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
+import { ScrollView, TextInput } from 'react-native-gesture-handler';
 
-export default function SignUpScreenB() {
+export default function SignUpScreenB({navigation}) {
   const [image, setImage] = useState(null);
 
   useEffect(() => {
@@ -34,22 +35,26 @@ export default function SignUpScreenB() {
 
   return (
     <View style={styles.container}>
+    
       <Text>Set your profile</Text>
-      <View style={{
+      <View style={{ height:250, width:400,
         // flex: 1,
         alignItems: 'center', justifyContent: 'center'
       }}>
       <Button title="upload a picture" onPress={pickImage} />
       {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
       </View>
+
+      <ScrollView>
       <View>
          <Text style={{
             fontWeight: "bold",
             fontSize: 15,
             // marginHorizontal: 35, 
             marginBottom: 7
-          }}>Full name</Text>
-         <View  style={{
+          }}>Project Name</Text>
+         <TextInput  style={{
+           marginTop:10,
             backgroundColor: '#E2E6EE',
             borderRadius: 10,
             width: 312,
@@ -57,17 +62,39 @@ export default function SignUpScreenB() {
           // marginBottom: 20
         }}>
           
-            </View>
+            </TextInput>
+      </View>
+
+      <View>
+         <Text style={{
+           marginTop:10,
+            fontWeight: "bold",
+            fontSize: 15,
+            // marginHorizontal: 35, 
+            marginBottom: 7
+          }}>Title</Text>
+         <TextInput style={{
+           marginTop:10,
+            backgroundColor: '#E2E6EE',
+            borderRadius: 10,
+            width: 312,
+            height: 35,
+          // marginBottom: 20
+        }}>
+          
+            </TextInput>
       </View>
 
       <View>
          <Text style={{
             fontWeight: "bold",
             fontSize: 15,
+            marginTop:10,
             // marginHorizontal: 35, 
             marginVertical:3
           }}>Location</Text>
-         <View  style={{
+         <TextInput  style={{
+           marginTop:10,
             backgroundColor: '#E2E6EE',
             borderRadius: 10,
             width: 312,
@@ -76,23 +103,51 @@ export default function SignUpScreenB() {
           // marginBottom: 20
         }}>
           
-            </View>
+            </TextInput>
+      </View>
+
+      <View>
+         <Text style={{
+            fontWeight: "bold",
+            fontSize: 15,
+            marginTop:10,
+            // marginHorizontal: 35, 
+            marginVertical:3
+          }}>Tell your story</Text>
+         <TextInput style={{
+           marginTop:10,
+            backgroundColor: '#E2E6EE',
+            borderRadius: 10,
+            width: 312,
+          height: 50,
+          marginVertical:3,
+          // marginBottom: 20
+        }}>
+          
+            </TextInput>
       </View>
       
-      <View>
-                <TouchableOpacity  onPress={() => { }}style={styles.buttonContainer}>
-                    <Text style={styles.buttonText}>sign in</Text>
+      
+      <View
+      style={{
+        marginTop:-50,
+     }}>
+                <TouchableOpacity     onPress={()=>{
+                navigation.navigate("DashBoard")
+           }} style={styles.buttonContainer}>
+                    <Text style={styles.buttonText}>submit</Text>
                 </TouchableOpacity>
        </View>
       
-
+       </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0,
+justifyContent:"center",
+alignItems:"center"
     
   },
   buttonContainer: {

@@ -4,18 +4,18 @@ import { StyleSheet, Text, View, Image,TextInput, TouchableOpacity, FlatList,
 
 
 
-function PaymentScreen (){
+function PaymentScreen ({navigation}){
     
     return(
         
      <View style={styles.container}>            
      
-     <View style={styles.redContainer}>            
+      {/* <View style={styles.redContainer}>            
        
      <Text>Payment Info</Text>
 
   
-     </View>
+     </View>  */}
 
 
 
@@ -23,7 +23,7 @@ function PaymentScreen (){
 
      <View style={styles. blueContainer}>            
      
-     <View>
+      <View>
          <Text>Full name</Text>
          <View  style={styles.placeholder}></View>
      </View>
@@ -31,10 +31,10 @@ function PaymentScreen (){
      <View>
          <Text>Credit Card</Text>
          <View  style={styles.placeholder}></View>
-     </View>
+     </View> 
 
     
-     <View style={styles.dateCvvBox}>
+      <View style={styles.dateCvvBox}>
          <View style={styles.boxbox}>
          <Text style={styles.texBox} >Credit Card</Text>
          <View  style={styles.placeholderTwo}></View>
@@ -43,7 +43,7 @@ function PaymentScreen (){
          <Text style={styles.texBox}>Credit Card</Text>
          <View  style={styles.placeholderTwo}></View>
          </View>
-     </View>
+     </View> 
      <View>
          <Text>Zip Code</Text>
          <View  style={styles.placeholder}></View>
@@ -53,9 +53,13 @@ function PaymentScreen (){
      </View>
 
      <View style={styles.signUpBox}>
-         <View style={styles.signUpText} >
+         <TouchableOpacity 
+           onPress={()=>{
+            navigation.navigate("ThankYouScreen")
+       }}
+         style={styles.signUpText} >
              <Text>Confirm Payment</Text>
-         </View>
+         </TouchableOpacity>
 
          <Text>Verify that thus info is correct</Text>
      </View>
@@ -71,29 +75,28 @@ function PaymentScreen (){
 const styles = StyleSheet.create({
     container: {
       
-      backgroundColor: '#fff',
+    //   backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
     
     },
 
-    redContainer:{
-        backgroundColor:"#FD513B",
-        width:400,
-        alignItems:"center",
-        justifyContent:"center",
+    // redContainer:{
+    //     backgroundColor:"#FD513B",
+    //     width:400,
+    //     alignItems:"center",
+    //     justifyContent:"center",
        
-        flex:0.8
-    },
+    //     flex:0.8
+    // },
 
    
     blueContainer:{
-        backgroundColor:"#fff",
-        
+        height:500,
         alignItems:"center",
         justifyContent:"center",
        
-        flex:4.2,
+        
     },
 
     placeholder:{

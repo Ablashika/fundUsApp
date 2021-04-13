@@ -5,7 +5,7 @@ import afrcan from "../../assets/africanshop.jpg"
 
 
 
-function LandingPage (){
+function LandingPage ({navigation}){
 
     const image = { uri: "https://reactjs.org/logo-og.png" };
     return(
@@ -23,7 +23,11 @@ function LandingPage (){
          
          
 
-             <TouchableOpacity style={styles.signUpBox}>
+             <TouchableOpacity
+              onPress={()=>{
+                navigation.navigate("LogInScreen")
+           }}
+             style={styles.signUpBox}>
                  <Text>
                      I am a business owner
                  </Text>
