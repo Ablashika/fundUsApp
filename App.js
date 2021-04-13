@@ -7,6 +7,7 @@ import SignUpScreen from './src/screens/SignUpScreen'
 import DashBoard from './src/screens/DashBoard';
 import SignUpScreenB from './src/screens/SignUpScreenB'
 import LandingPage from './src/screens/LandingPage';
+import LogInScreen from './src/screens/LogInScreen';
 
 
 export default function App() {
@@ -28,7 +29,21 @@ const  Stack = createStackNavigator()
            
   }}
    
-   name="LandingPage" component={LandingPage}/>      
+   name="LandingPage" component={LandingPage}/> 
+
+    <Stack.Screen 
+   
+   options={{
+    // title:"",
+    // headerStyle:{
+    //   backgroundColor:"#FD513B"
+    // },
+    
+  
+           
+  }}
+   
+   name="LogInScreen" component={LogInScreen}/>      
    <Stack.Screen 
    
    options={{
