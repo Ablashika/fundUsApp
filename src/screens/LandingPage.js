@@ -28,13 +28,13 @@ function LandingPage ({navigation}){
                 navigation.navigate("LogInScreen")
            }}
              style={styles.signUpBox}>
-                 <Text>
+                 <Text style={{fontWeight:"bold"}}>
                      I am a business owner
                  </Text>
              </TouchableOpacity>
              <TouchableOpacity style={styles.signUpBox}>
-                 <Text>
-                    here to support!s
+                 <Text style={{fontWeight:"bold"}}>
+                    Here to support!
                  </Text>
              </TouchableOpacity>
          </View>
@@ -86,18 +86,20 @@ const styles = StyleSheet.create({
    signUpBox: {
        height:40,
        width:250,
-       backgroundColor:"#aaaaaa",
-       marginTop:10,
+       backgroundColor:"#FFFFFF",
+       marginTop:8,
        justifyContent:"center",
        borderRadius:30,
-       alignItems:"center"
+       alignItems: "center",
+       opacity: 40,
+       fontWeight:"700"
    },
 
    fundusText:{
-       marginTop:-30,
-       fontWeight:"bold",
+       
+       fontWeight:"700",
        color:"#ffffff",
-       fontSize:30
+       fontSize:70
    },
 
    learnMoreText :{

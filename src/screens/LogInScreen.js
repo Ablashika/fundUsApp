@@ -1,54 +1,84 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
 // import { AntDesign } from '@expo/vector-icons';
+import { connect } from "react-redux";
+import {loginEmailAccount} from '../redux/actions/authActions'
 
-export default function LogInScreen({navigation}) {
+class LogInScreen extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: "",
+      password: ""
+      
+    }
+  };
+  handleUpdateState = (name, value) => {
+    this.setState({
+      [name]: value
+    })
+    
+  }
+  handleOnSubmit = () => {
+    
+    this.props.loginEmailAccount(this.state.email, this.state.password)
+  }
+
+  render() {
+    const { navigation, auth } = this.props;
+   
     return (
-        <View style={styles.mainContainer}>
-            {/* <Image source={require('/Users/mac/Desktop/reactnative/AmpersandApp/ampersandapp/assets/officesetup.jpg')} style={styles.image} /> */}
+      <View style={styles.mainContainer}>
+        {/* <Image source={require('/Users/mac/Desktop/reactnative/AmpersandApp/ampersandapp/assets/officesetup.jpg')} style={styles.image} /> */}
         <View style={styles.welcomeText}>
-          <Text style={{fontSize:40, fontWeight:'bold',}}> WELCOME BACK!</Text>
-          <Text style={{fontSize:25, fontWeight:'200',}}>sign in to continue.</Text>
+          <Text style={{ fontSize: 40, fontWeight: 'bold', }}> WELCOME BACK!</Text>
+          <Text style={{ fontSize: 25, fontWeight: '200', }}>sign in to continue.</Text>
         </View>
 
-            <View style={{
-                flexDirection:"column",
-                 alignItems: "flex-start",
-                justifyContent: "space-between"
-            }}>
-          <Text style={{
-            fontWeight: "bold",
-            fontSize: 15,
-            marginHorizontal: 35, 
-            marginBottom: 7
-          }}>Email</Text>
-          <TextInput style={{
-             alignSelf: 'center',
-             justifyContent: 'center',
-             marginHorizontal: 30,
-             // marginBottom: 20,
-             borderColor: 'gray',
-             backgroundColor: '#E2E6EE',
-             borderRadius: 10,
-             width: 312,
-             height: 35,marginBottom:20
-          }}
-                    placeholderTextColor="gray"
-                    placeholder="  magnacarter@gmail.com"
-                />
-            </View>
-
-            {/* <View style={{backgroundColor:"#e6e7e8",height:2,width:330,marginBottom:10,marginLeft:15}}></View> */}
-
-            <View style={{
+        <View style={{
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "space-between"
-            }}>
+        }}>
+          {auth.error.login && (
+                        <Text style={{ color: "red" }}>{auth.error.login}</Text>
+                      )}
+ 
           <Text style={{
             fontWeight: "bold",
             fontSize: 15,
-            marginHorizontal: 35, 
+            marginHorizontal: 35,
+            marginBottom: 7
+          }}>Email</Text>
+          <TextInput style={{
+            alignSelf: 'center',
+            justifyContent: 'center',
+            marginHorizontal: 30,
+            // marginBottom: 20,
+            borderColor: 'gray',
+            backgroundColor: '#E2E6EE',
+            borderRadius: 10,
+            width: 312,
+            height: 35, marginBottom: 20
+          }}
+            value={this.state.email}
+            onChangeText={(text) => { this.handleUpdateState('email', text) }} 
+            placeholderTextColor="gray"
+            placeholder="  magnacarter@gmail.com"
+          />
+        </View>
+
+        {/* <View style={{backgroundColor:"#e6e7e8",height:2,width:330,marginBottom:10,marginLeft:15}}></View> */}
+
+        <View style={{
+          flexDirection: "column",
+          alignItems: "flex-start",
+          justifyContent: "space-between"
+        }}>
+          <Text style={{
+            fontWeight: "bold",
+            fontSize: 15,
+            marginHorizontal: 35,
             marginBottom: 7,
             alignContent: 'stretch'
           }}
@@ -66,39 +96,42 @@ export default function LogInScreen({navigation}) {
             width: 312,
             height: 35
           }}
-                    placeholderTextColor="#aaaaaa"
-                    placeholder="  Password"
-                    secureTextEntry={true}
-                />
-            </View>
-            {/* <View style={{backgroundColor:"#e6e7e8",height:2,width:330,marginBottom:10,marginLeft:15}}></View> */}
-
-            <View>
-                <TouchableOpacity  
-                  onPress={()=>{
-                    navigation.navigate("DashBoard")
-               }}
-                style={styles.buttonContainer}>
-                    <Text style={styles.buttonText}>sign in</Text>
-                </TouchableOpacity>
-            </View>
-
-            <View>
-                <View style={styles.forgotPassword}>
-                    <Text style={{ fontSize: 17 }}>Forgot? </Text>
-                    <View>
-                        <Text style={{ fontSize: 17,marginBottom:5 }}>Reset Password</Text>
-                        <View style={{
-                            backgroundColor: "#de4f45",
-                            height: 2,
-                            width: 105,
-                            borderRadius: 15,
-                        }}></View>
-                    </View>
-                </View>
-            </View>
+            value={this.state.password}
+            onChangeText={(text) => { this.handleUpdateState('password', text) }} 
+            placeholderTextColor="#aaaaaa"
+            placeholder="  Password"
+            secureTextEntry={true}
+          />
         </View>
+        {/* <View style={{backgroundColor:"#e6e7e8",height:2,width:330,marginBottom:10,marginLeft:15}}></View> */}
+
+        <View>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("WallPage")
+            }}
+            style={styles.buttonContainer}>
+            <Text style={styles.buttonText}
+              OnPress={this.handleOnSubmit}
+            >sign in</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.DonthaveanAccountContainer}>
+
+          <Text style={styles.NoAccountText}>dont have an account?</Text>
+      
+      
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('LogInScreen')
+          }} >
+            <Text style={styles.SignUpText}>Sign up</Text>
+          </TouchableOpacity>
+
+        </View>
+      </View>
     )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -132,8 +165,8 @@ const styles = StyleSheet.create({
         alignContent:'center',
         borderRadius: 100,
         // marginLeft: 20,
-        marginTop:60,
-      marginBottom: 20,
+        marginTop:80,
+      marginBottom: 5,
       borderWidth: 2,
         borderColor:'#FD513B'
     },
@@ -145,7 +178,9 @@ const styles = StyleSheet.create({
     },
     forgotPassword: {
         flexDirection: "row",
-        marginLeft: 20
+        // marginLeft: 20,
+      justifyContent: 'center',
+      
   },
   welcomeText:{
     alignSelf: 'center',
@@ -155,5 +190,31 @@ const styles = StyleSheet.create({
     marginTop:30
     
     
-    }
+  },
+  DonthaveanAccountContainer:{
+    flexDirection:'row',
+    justifyContent:'center',
+    
+
+  },
+  SignUpText: {
+    fontSize: 17,
+    color:'#067EED',
+    borderBottomColor: "#FD513B",
+    
+    borderBottomWidth: 2,
+  
+    borderTopLeftRadius: 0,
+    borderTopRightRadius:5
+  // borderColor:'blue'
+   
+  },
+  NoAccountText:{
+    marginRight:10,
+    fontSize:17
+},
 })
+const mapStateToProp = (state)=> {
+  return{ auth:state}
+}
+export default connect(mapStateToProp, {loginEmailAccount})(LogInScreen);

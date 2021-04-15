@@ -1,39 +1,43 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import { LottieView } from "lottie-react-native";
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React from 'react';
+import LottieView from 'lottie-react-native';
+import {  View,Text,StyleSheet } from 'react-native';
 
+export default class ThankYouScreen extends React.Component {
+  componentDidMount() {
+    this.animation.play();
+    // Or set a specific startFrame and endFrame with:
+    this.animation.play(30, 120);
+  }
 
-export default class ThankYouScreen extends Component {
-    constructor(props) {
-        super();
-    }
-
-    render() {
-        return (
-            <View
-                style={{  
-                    backgroundColor: 'white'
-                }}
-
-
-            ><TouchableOpacity
-            onPress={()=>{
-                this.props.navigation.navigate('PaymentScreen')
-                
-           }}><Text>OBEYE</Text></TouchableOpacity>
-                <Text>OBEYE OBEYIE</Text>
-                {/* <LottieView
-                    source={require('../../assets/afri')}
-                    autoPlay
-                    loop={false}
-                    speed={0.5}
-                    onAnimationFinish={() => {
-                        console.log('Animation Finished!')
-                        this.props.navigation.replace('Home');
-                    }}
-                /> */}
-            </View>
-        )
-    }
+  render() {
+      return (
+          <View styles={styles.mainContainer}>
+              <Text>
+                  THANK YOU FOR SUPPORTING!
+              </Text>
+              <LottieView styles={styles.lottie}
+        ref={animation => {
+          this.animation = animation;
+        }}
+        source={require('../../assets/medal.json')}
+              />
+              
+              
+        </View>
+      
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+    mainContainer: {
+        // flex: 1,
+        // alignContent: 'center',
+        justifyContent: 'space-evenly',
+        backgroundColor: 'blue'
+    },
+    lottie: {
+        height: 200,
+        width:400
+    }
+})
