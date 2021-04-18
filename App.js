@@ -12,7 +12,7 @@ export default function App() {
       <PersistGate loading={null}  persistor={persistor}  >
       <AppContainer/>
       </PersistGate>
-      
+      <StatusBar style="auto" />
     </Provider>
     
   );

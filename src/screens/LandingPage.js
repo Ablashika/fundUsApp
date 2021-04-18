@@ -62,11 +62,11 @@ const styles = StyleSheet.create({
 
     image: {
         flex: 1,
-        resizeMode: "cover",
+        // resizeMode:"center",
         justifyContent: "center",
-        height:800,
-        width:400,
-        opacity:0.5,
+        height:820,
+        width:410,
+        opacity:0.4,
         
         
       },
@@ -79,7 +79,8 @@ const styles = StyleSheet.create({
       width:300,
       flex: 5,
       justifyContent:"center",
-      alignItems:"center"
+       alignItems: "center",
+      marginTop:40,
 
    },
 
@@ -97,9 +98,10 @@ const styles = StyleSheet.create({
 
    fundusText:{
        
-       fontWeight:"700",
+       fontWeight:"400",
        color:"#ffffff",
-       fontSize:70
+       fontSize: 70,
+       marginTop:10
    },
 
    learnMoreText :{
