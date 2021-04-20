@@ -91,7 +91,15 @@ const  Stack = createStackNavigator()
    options={{
     // title:"My DashBoad",
     headerStyle:{
-      backgroundColor:"#FD513B"
+       backgroundColor: "#FD513B",
+       borderRadius: 0,
+       shadowColor: "#000000",
+       shadowOpacity: 0.8,
+       shadowRadius: 2,
+       shadowOffset: {
+         height: 1,
+         width: 0
+       }
     },
     headerTintColor:"white",
     headerTitleAlign:"center",

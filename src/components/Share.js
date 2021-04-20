@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   alignSelf: "center",
     alignContent:'center',
-    borderRadius: 100,
+    borderRadius: 15,
     // marginLeft: 20,
     // marginTop:60,
 //   marginBottom: 20,

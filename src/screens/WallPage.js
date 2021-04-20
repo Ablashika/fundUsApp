@@ -16,7 +16,7 @@ function WallPage ({navigation}){
      
        <View style={styles.redContainer}>            
        
-         <Text style={{ color:"white", fontWeight:"bold"}}>Find A cause</Text>
+         {/* <Text style={{ color:"white", fontWeight:"bold"}}>Find A cause</Text> */}
 
   
        </View>
@@ -30,12 +30,12 @@ function WallPage ({navigation}){
 
   
               </ImageBackground> 
-   <View style={styles.textShow}>
+                <View style={styles.textShow}>
     
-         <Text style={styles.textOp}>Fashion Design</Text>
-         <Text style={styles.textO}>Help is get back on her feet lorem ipsum or  </Text>
+                     <Text style={styles.textOp}>Fashion Design</Text>
+                     <Text style={styles.textO}>Help SIISI get back on her feet lorem ipsum or  </Text>
 
-          <TouchableOpacity 
+              <TouchableOpacity 
                   onPress={()=>{
                     navigation.navigate("DetailsScreen")
                    }}
@@ -119,7 +119,16 @@ function WallPage ({navigation}){
   </View>  
 
   </ScrollView>
-<View style={{flex:2, backgroundColor:"white", marginTop:-80, justifyContent:"center"}}>
+        <View elevation={5} style={{
+          flex: 2, backgroundColor: "#FFFCF0", marginTop: -80, justifyContent: "center",
+          borderRadius: 100,
+          shadowColor: "#000000",
+          shadowOpacity: 3,
+          shadowRadius: 2,
+          shadowOffset: {
+            height: 1,
+            width: 0
+          }}}>
   <View style={styles.lastBox}>
   <View><Entypo name="home" size={24} color="black" /></View>
   <View><Entypo name="share" size={24} color="black" /></View>
@@ -135,11 +144,11 @@ function WallPage ({navigation}){
 
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: '#fff',
+      backgroundColor: '#FFFCF0',
       alignItems: 'center',
       justifyContent: 'center',
-      flex:1
-      ,
+      flex:5
+      
     
     },
 
@@ -160,10 +169,10 @@ const styles = StyleSheet.create({
       },
 
       imagebox:{
-        height:380,
+        height:360,
         width:320,
         justifyContent:"center",
-        margin:20,
+        // margin:20,
         alignContent:"center",
        
         
@@ -210,7 +219,7 @@ const styles = StyleSheet.create({
         borderRadius:30,
         justifyContent:"center",
       alignItems: "center",
-        color:'blue',
+        // color:'white',
     },
 
     lastBox:{
@@ -218,8 +227,9 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         width:400,
-        // height:100,
-        justifyContent:"space-evenly",
+        height:100,
+      justifyContent: "space-evenly",
+        
         
        
   },

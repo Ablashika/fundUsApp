@@ -158,12 +158,12 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         height: 40,
-        width: 217,
-        backgroundColor: "#FFFCF0",
+        width: 215,
+        backgroundColor: "#FD513B",
         justifyContent: "center",
       alignSelf: "center",
         alignContent:'center',
-        borderRadius: 100,
+        borderRadius: 15,
         // marginLeft: 20,
         marginTop:80,
       marginBottom: 5,
@@ -171,8 +171,8 @@ const styles = StyleSheet.create({
         borderColor:'#FD513B'
     },
     buttonText: {
-        color: "#FD513B",
-        fontSize: 18,
+        color: "#FFFCF0",
+        fontSize: 20,
       alignSelf: 'center',
         fontWeight:'bold'
     },

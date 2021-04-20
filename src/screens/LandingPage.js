@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { StyleSheet, Text, View, Image,TextInput, TouchableOpacity, FlatList, ImageBackground} from 'react-native';
-import afrcan from "../../assets/africanshop.jpg"
+import afrcan from "../../assets/sew.jpeg"
 
 
 
@@ -65,8 +65,9 @@ const styles = StyleSheet.create({
         // resizeMode:"center",
         justifyContent: "center",
         height:820,
-        width:410,
-        opacity:0.4,
+        width:400,
+        opacity: 0.4,
+        marginLeft:20
         
         
       },
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
        backgroundColor:"#FFFFFF",
        marginTop:8,
        justifyContent:"center",
-       borderRadius:30,
+       borderRadius:15,
        alignItems: "center",
        opacity: 40,
        fontWeight:"700"
