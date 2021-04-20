@@ -22,26 +22,19 @@ const  Stack = createStackNavigator()
       <Stack.Navigator>
 
       <Stack.Screen 
-   
-   options={{
-    // title:"",
-    // headerStyle:{
-    //   backgroundColor:"#FD513B"
-    // },
-    
-  
-           
-  }}
+     options={{header:()=>null}}
    
    name="LandingPage" component={LandingPage}/> 
 
     <Stack.Screen 
    
    options={{
-    // title:"",
-    // headerStyle:{
-    //   backgroundColor:"#FD513B"
-    // },
+    title:"Log In",
+    headerStyle:{
+      backgroundColor:"#FD513B",
+     
+    },
+    headerTintColor:"white",
     
   
            
