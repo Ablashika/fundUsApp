@@ -34,7 +34,7 @@ export default class RNWeb extends Component {
             this.props.closeWebView();
 
         }
-    }
+    };
 }
 
 const styles = StyleSheet.create({
