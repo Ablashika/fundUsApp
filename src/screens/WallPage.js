@@ -14,33 +14,34 @@ function WallPage ({navigation}){
         
      <View style={styles.container}>            
      
-     <View style={styles.redContainer}>            
+       <View style={styles.redContainer}>            
        
-     <Text style={{ color:"white", fontWeight:"bold"}}>Find A cause</Text>
+         {/* <Text style={{ color:"white", fontWeight:"bold"}}>Find A cause</Text> */}
 
   
-     </View>
+       </View>
       <ScrollView>
-    <View style={{ flex:4, justifyContent:"center", alignItems:"center", marginTop:-10}}>
+        <View style={{ flex:4, justifyContent:"center", alignItems:"center", marginTop:-10}}>
 
  
-  <View style={styles.imagebox}>
+           <View style={styles.imagebox}>
     
-    <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
+              <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
 
   
-   </ImageBackground> 
-   <View style={styles.textShow}>
+              </ImageBackground> 
+                <View style={styles.textShow}>
     
-         <Text style={styles.textOp}>Fashion Design</Text>
-         <Text style={styles.textO}>Help iss get back on her feet</Text>
+                     <Text style={styles.textOp}>Fashion Design</Text>
+                     <Text style={styles.textO}>Help SIISI get back on her feet lorem ipsum or  </Text>
 
-         <TouchableOpacity 
-            onPress={()=>{
-              navigation.navigate("DetailsScreen")
-          }}
-         
-         style={styles.containerText}><Text>View Project</Text></TouchableOpacity>
+              <TouchableOpacity 
+                  onPress={()=>{
+                    navigation.navigate("DetailsScreen")
+                   }}
+                  style={styles.containerText}>
+              <Text>View Project</Text>
+           </TouchableOpacity>
          
     
   </View>
@@ -99,7 +100,9 @@ function WallPage ({navigation}){
          <Text style={styles.textOp}>Fashion Design</Text>
          <Text style={styles.textO}>Help iss get back on her feet</Text>
 
-         <TouchableOpacity style={styles.containerText}><Text>View Project</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.containerText}>
+                  <Text style={styles.project}>View Project</Text>
+                </TouchableOpacity>
          
     
   </View>
@@ -116,7 +119,16 @@ function WallPage ({navigation}){
   </View>  
 
   </ScrollView>
-<View style={{flex:2, backgroundColor:"white", marginTop:-80, justifyContent:"center"}}>
+        <View elevation={5} style={{
+          flex: 2, backgroundColor: "#FFFCF0", marginTop: -80, justifyContent: "center",
+          borderRadius: 100,
+          shadowColor: "#000000",
+          shadowOpacity: 3,
+          shadowRadius: 2,
+          shadowOffset: {
+            height: 1,
+            width: 0
+          }}}>
   <View style={styles.lastBox}>
   <View><Entypo name="home" size={24} color="black" /></View>
   <View><Entypo name="share" size={24} color="black" /></View>
@@ -132,11 +144,11 @@ function WallPage ({navigation}){
 
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: '#fff',
+      backgroundColor: '#FFFCF0',
       alignItems: 'center',
       justifyContent: 'center',
-      flex:1
-      ,
+      flex:5
+      
     
     },
 
@@ -157,10 +169,10 @@ const styles = StyleSheet.create({
       },
 
       imagebox:{
-        height:380,
+        height:360,
         width:320,
         justifyContent:"center",
-        margin:20,
+        // margin:20,
         alignContent:"center",
        
         
@@ -184,7 +196,7 @@ const styles = StyleSheet.create({
 
       textOp:{
           color:"white",
-          marginLeft:20,
+          // marginLeft:20,
           // marginTop:30
 
       },
@@ -192,9 +204,10 @@ const styles = StyleSheet.create({
 
       textO:{
         color:"white",
-        marginLeft:20,
-        marginTop:30,
-        fontWeight:"bold"
+        // marginLeft:20,
+        // marginTop:30,
+        fontWeight: "bold",
+        fontSize:20
     },
 
     containerText:{
@@ -205,7 +218,8 @@ const styles = StyleSheet.create({
         width:100,
         borderRadius:30,
         justifyContent:"center",
-        alignItems:"center",
+      alignItems: "center",
+        // color:'white',
     },
 
     lastBox:{
@@ -213,10 +227,14 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         width:400,
-        // height:100,
-        justifyContent:"space-evenly",
+        height:100,
+      justifyContent: "space-evenly",
+        
         
        
+  },
+  project: {
+      color:'blue'
     }
     
    

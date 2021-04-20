@@ -1,65 +1,166 @@
-// import React from 'react'
-// import {NavigationContainer} from '@react-navigation/native'
-// import {createStackNavigator} from '@react-navigation/stack'
-// import SignUpScreen from '../fundUsApp/src/screens/SignUpScreen'
-// import Dashboard from './src/screens/DashBoard';
-// import PaymentScreen from './src/screens/PaymentScreen';
-// import LandingPage from './src/screens/LandingPage';
-// import DetailsScreen from './src/screens/DetailsScreen';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack'
+import {NavigationContainer} from '@react-navigation/native'
+import SignUpScreen from '../screens/SignUpScreen'
+import DashBoard from '../screens/DashBoard';
+import SignUpScreenB from '../screens/SignUpScreenB'
+import LandingPage from '../screens/LandingPage';
+import LogInScreen from '../screens/LogInScreen';
+import WallPage from '../screens/WallPage'
+import DetailsScreen from '../screens/DetailsScreen';
+import PaymentScreen from '../screens/PaymentScreen';
+import ThankYouScreen from '../screens/ThankYouScreen';
 
 
-// const  Stack = createStackNavigator()
-
-// export default function Navigation() {
-//     return (
-//         <NavigationContainer> 
-//       <Stack.Navigator
-//   screenOptions={{
-//     title:"Notification",
-//     headerStyle:{
-//       backgroundColor:"white"
-//     },
-//     headerRight:()=>(
-//       <TouchableOpacity
-//       onPress={()=>{
-//         navigation.navigate("ProfileDetails")
-//     }}
-//       style={styles.profileContainer}><AntDesign name="arrowleft" size={24} color="black" /></TouchableOpacity>  
-//      ),
-//     headerTintColor:"black",
-//     headerTitleAlign:"center"
-
-    
-//   }}
-// >
-//    <Stack.Screen name="SignUpScreen" component={SignUpScreen}/>
+export default function AppContainer() {
+  
+const  Stack = createStackNavigator()
+  return (
    
-//    <Stack.Screen name="DashBoard" component={Dashboard}/>
-//    {/* <Stack.Screen name="SignInScreen" component={SignInScreen}/>
-//    <Stack.Screen
-//       options={({ navigation }) => ({
-//         title:"Notifaction",
-//         headerStyle:{
-//           backgroundColor:"white"
-//         },
-//         headerTintColor:"black",
-//         headerTitleAlign:"center",
-//         headerRight:()=>(
-//           <TouchableOpacity
-//           onPress={()=>{
-//             navigation.navigate("ProfileDetails")
-//         }}
-//           style={styles.profileContainer}><AntDesign name="arrowleft" size={24} color="black" /></TouchableOpacity>  
-//          )
-//          ,
-               
-//       })} 
-//    name="NotificationScreen" component={NotificationScreen}/>
-//    <Stack.Screen name="ProfileDetails" component={ProfileDetails}/>
-//    <Stack.Screen name="ProfileScreen" component={ProfileScreen}/> */}
+      <NavigationContainer> 
+      <Stack.Navigator>
 
-// </Stack.Navigator>
+      <Stack.Screen 
+   
+   options={{
+    header:()=>null
+    
+  
+           
+  }}
+   
+   name="LandingPage" component={LandingPage}/> 
 
-//         </NavigationContainer>
-//     )
-// }
+    <Stack.Screen 
+   
+   options={{
+    // title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   
+   name="LogInScreen" component={LogInScreen}/>      
+   <Stack.Screen 
+   
+   options={{
+    title:"Sign Up",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    // headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   
+   name="SignUpScreen" component={SignUpScreen}/>
+   
+   <Stack.Screen 
+   options={{
+    title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="DashBoard" component={DashBoard}/>
+    <Stack.Screen 
+   options={{
+    // title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="SignUpScreenB" component={SignUpScreenB}/>
+
+<Stack.Screen 
+   options={{
+    // title:"My DashBoad",
+    headerStyle:{
+       backgroundColor: "#FD513B",
+       borderRadius: 0,
+       shadowColor: "#000000",
+       shadowOpacity: 0.8,
+       shadowRadius: 2,
+       shadowOffset: {
+         height: 1,
+         width: 0
+       }
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="WallPage" component={WallPage}/>
+   
+<Stack.Screen 
+   options={{
+    // title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="DetailsScreen" component={DetailsScreen}/>
+      
+<Stack.Screen 
+   options={{
+    // title:"My DashBoad",
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="PaymentScreen" component={PaymentScreen}/>
+
+      
+<Stack.Screen 
+   options={{
+    
+    headerStyle:{
+      backgroundColor:"#FD513B"
+    },
+    headerTintColor:"white",
+    headerTitleAlign:"center",
+  
+           
+  }}
+   name="ThankYouScreen" component={ThankYouScreen}/>
+
+</Stack.Navigator>
+
+        </NavigationContainer>
+    
+    
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 2,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
