@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import { Button, Image, View, Platform,Text,StyleSheet,TouchableOpacity } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
+import {  connect} from "react-redux";
 
-export default function SignUpScreenB({navigation}) {
+ function SignUpScreenB({navigation}) {
   const [image, setImage] = useState(null);
 
   useEffect(() => {
@@ -172,3 +173,5 @@ buttonText: {
 },
 });
 
+
+export default connect({}, {}) (SignUpScreenB)

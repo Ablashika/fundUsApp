@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { StyleSheet, Text, View, Image,TextInput, TouchableOpacity, FlatList, ImageBackground} from 'react-native';
-import afrcan from "../../assets/africanshop.jpg"
+import afrcan from "../../assets/sew.jpeg"
 
 
 
@@ -28,13 +28,13 @@ function LandingPage ({navigation}){
                 navigation.navigate("LogInScreen")
            }}
              style={styles.signUpBox}>
-                 <Text>
+                 <Text style={{fontWeight:"bold"}}>
                      I am a business owner
                  </Text>
              </TouchableOpacity>
              <TouchableOpacity style={styles.signUpBox}>
-                 <Text>
-                    I am here to support
+                 <Text style={{fontWeight:"bold"}}>
+                    Here to support!
                  </Text>
              </TouchableOpacity>
          </View>
@@ -62,11 +62,12 @@ const styles = StyleSheet.create({
 
     image: {
         flex: 1,
-        resizeMode: "cover",
+        // resizeMode:"center",
         justifyContent: "center",
-        height:800,
+        height:820,
         width:400,
-        opacity:0.5,
+        opacity: 0.4,
+        marginLeft:20
         
         
       },
@@ -79,25 +80,29 @@ const styles = StyleSheet.create({
       width:300,
       flex: 5,
       justifyContent:"center",
-      alignItems:"center"
+       alignItems: "center",
+      marginTop:40,
 
    },
 
    signUpBox: {
        height:40,
        width:250,
-       backgroundColor:"#aaaaaa",
-       marginTop:10,
+       backgroundColor:"#FFFFFF",
+       marginTop:8,
        justifyContent:"center",
-       borderRadius:30,
-       alignItems:"center"
+       borderRadius:15,
+       alignItems: "center",
+       opacity: 40,
+       fontWeight:"700"
    },
 
    fundusText:{
-       marginTop:-30,
-       fontWeight:"bold",
+       
+       fontWeight:"400",
        color:"#ffffff",
-       fontSize:30
+       fontSize: 70,
+       marginTop:10
    },
 
    learnMoreText :{
