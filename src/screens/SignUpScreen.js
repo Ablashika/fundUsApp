@@ -143,10 +143,11 @@ import {createEmailAccount,SignUpError} from '../redux/actions/authActions'
           />
         </View>
         <View>
-          <TouchableOpacity onPress={() => {
-            this.handleOnSubmit}}
+          <TouchableOpacity onPress={()=>{
+                navigation.navigate("DashBoard")
+           }}
             style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Confirm</Text>
+            <Text style={styles.buttonText}>Submit</Text>
           </TouchableOpacity>
         </View>
 

@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         marginTop:30,
         height:400,
         width:300,
-        backgroundColor:"red"
+        // backgroundColor:"red"
 
     },
 

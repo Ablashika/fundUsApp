@@ -32,7 +32,10 @@ function LandingPage ({navigation}){
                      I am a business owner
                  </Text>
              </TouchableOpacity>
-             <TouchableOpacity style={styles.signUpBox}>
+                <TouchableOpacity onPress={()=>{
+                navigation.navigate("WallPage")
+           }}
+                    style={styles.signUpBox}>
                  <Text style={{fontWeight:"bold"}}>
                     Here to support!
                  </Text>

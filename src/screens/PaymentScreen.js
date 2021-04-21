@@ -94,6 +94,15 @@ function PaymentScreen() {
                         style={styles.placeholder}></TextInput>
                 </View>
 
+                <View>
+          <TouchableOpacity onPress={()=>{
+                navigation.navigate("ThankYouScreen")
+           }}
+            style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>Submit</Text>
+          </TouchableOpacity>
+        </View>
+
 
                 {/* <View style={styles.dateCvvBox}>
          <View style={styles.boxbox}>
