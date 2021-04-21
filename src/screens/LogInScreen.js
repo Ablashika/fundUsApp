@@ -108,7 +108,7 @@ class LogInScreen extends Component {
         <View>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("WallPage")
+              navigation.navigate("DashBoard")
             }}
             style={styles.buttonContainer}>
             <Text style={styles.buttonText}
@@ -125,7 +125,11 @@ class LogInScreen extends Component {
           <TouchableOpacity onPress={() => {
             navigation.navigate('LogInScreen')
           }} >
-            <Text style={styles.SignUpText}>Sign up</Text>
+            <Text
+              onPress={()=>{
+                navigation.navigate("SignUpScreen")
+           }}
+              style={styles.SignUpText}>Sign up</Text>
           </TouchableOpacity>
 
         </View>

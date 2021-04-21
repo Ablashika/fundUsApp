@@ -174,4 +174,4 @@ buttonText: {
 });
 
 
-export default connect({}, {}) (SignUpScreenB)
+export default SignUpScreenB
