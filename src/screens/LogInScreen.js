@@ -1,31 +1,32 @@
-import React, {Component} from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
 // import { AntDesign } from '@expo/vector-icons';
 import { connect } from "react-redux";
 import {loginEmailAccount} from '../redux/actions/authActions'
 
-class LogInScreen extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      email: "",
-      password: ""
-    
-    }
-  };
-  handleUpdateState = (name, value) => {
-    this.setState({
-      [name]: value
-    })
-    
-  }
-  handleOnSubmit = () => {
-    
-    this.props.loginEmailAccount(this.state.email, this.state.password)
-  }
 
-  render() {
-    const { navigation, auth } = this.props;
+function LogInScreen ({navigation}){
+
+ 
+
+  const [details, setDetails] = useState({
+    email:"",
+    password:"", 
+   
+ });
+
+ 
+
+
+ const handleUpdateState = (name, value)=>{
+   setDetails({...details, [name]:value})
+ }
+
+ const handleOnsubmit = () =>{
+    createEmailAccount(details.email,details.password)  
+ }
+  
+
    
     return (
       <View style={styles.mainContainer}>
@@ -40,9 +41,7 @@ class LogInScreen extends Component {
           alignItems: "flex-start",
           justifyContent: "space-between"
         }}>
-          {auth.error.login && (
-                        <Text style={{ color: "red" }}>{auth.error.login}</Text>
-                      )}
+    
  
           <Text style={{
             fontWeight: "bold",
@@ -136,7 +135,7 @@ class LogInScreen extends Component {
       </View>
     )
   }
-}
+
 
 const styles = StyleSheet.create({
     mainContainer: {
