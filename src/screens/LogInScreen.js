@@ -10,7 +10,7 @@ class LogInScreen extends Component {
     this.state = {
       email: "",
       password: ""
-      
+    
     }
   };
   handleUpdateState = (name, value) => {

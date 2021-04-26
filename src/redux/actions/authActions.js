@@ -1,4 +1,4 @@
-import firebase from '../../Firebase/firebase';
+import firebase from '../../firebase/firebase';
 
 export function createEmailAccount(email, password) {
     return async (dispatch) => {
