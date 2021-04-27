@@ -12,85 +12,96 @@ import WallPage from '../screens/WallPage'
 import DetailsScreen from '../screens/DetailsScreen';
 import PaymentScreen from '../screens/PaymentScreen';
 import ThankYouScreen from '../screens/ThankYouScreen';
+import {connect} from 'react-redux'
 
 
-export default function AppContainer() {
   
-const  Stack = createStackNavigator()
-  return (
+    const Stack = createStackNavigator()
+    function AppContainer( {auth})
+    {
+    return (
    
-      <NavigationContainer> 
-      <Stack.Navigator>
+      <NavigationContainer>
+        {
+          auth.login ?
+            
+            <Stack.Navigator>
 
-      <Stack.Screen 
+              <Stack.Screen
    
-   options={{
-    header:()=>null
+                options={{
+                  header: () => null
     
   
            
-  }}
+                }}
    
-   name="LandingPage" component={LandingPage}/> 
+                name="LandingPage" component={LandingPage} />
+              <Stack.Screen
+   
+   options={{
+     // title:"My DashBoad",
+     headerStyle: {
+       backgroundColor: "#FD513B"
+     },
+     headerTintColor: "white",
+     headerTitleAlign: "center",
 
-    <Stack.Screen 
-   
-   options={{
-    // title:"My DashBoad",
-    headerStyle:{
-      backgroundColor:"#FD513B"
-    },
-    headerTintColor:"white",
-    headerTitleAlign:"center",
   
-           
-  }}
-   
-   name="LogInScreen" component={LogInScreen}/>      
-   <Stack.Screen 
-   
-   options={{
-    title:"Sign Up",
-    headerStyle:{
-      backgroundColor:"#FD513B"
-    },
-    // headerTintColor:"white",
-    headerTitleAlign:"center",
-  
-           
-  }}
-   
-   name="SignUpScreen" component={SignUpScreen}/>
-   
-   <Stack.Screen 
-   options={{
-    title:"My DashBoad",
-    headerStyle:{
-      backgroundColor:"#FD513B"
-    },
-    headerTintColor:"white",
-    headerTitleAlign:"center",
-  
-           
-  }}
-   name="DashBoard" component={DashBoard}/>
-    <Stack.Screen 
-   options={{
-    // title:"My DashBoad",
-    headerStyle:{
-      backgroundColor:"#FD513B"
-    },
-    headerTintColor:"white",
-    headerTitleAlign:"center",
-  
-           
-  }}
-   name="SignUpScreenB" component={SignUpScreenB}/>
+   }}
 
-<Stack.Screen 
+                name="LogInScreen" component={LogInScreen} />
+              
+              <Stack.Screen
+
    options={{
-    // title:"My DashBoad",
-    headerStyle:{
+     title: "Sign Up",
+     headerStyle: {
+       backgroundColor: "#FD513B"
+     },
+     // headerTintColor:"white",
+     headerTitleAlign: "center",
+
+  
+   }}
+
+   name="SignUpScreen" component={SignUpScreen} />
+
+            </Stack.Navigator>
+            
+            :
+            <Stack.Navigator>
+               
+ 
+ <Stack.Screen
+   options={{
+     title: "My DashBoad",
+     headerStyle: {
+       backgroundColor: "#FD513B"
+     },
+     headerTintColor: "white",
+     headerTitleAlign: "center",
+
+  
+   }}
+   name="DashBoard" component={DashBoard} />
+ <Stack.Screen
+   options={{
+     // title:"My DashBoad",
+     headerStyle: {
+       backgroundColor: "#FD513B"
+     },
+     headerTintColor: "white",
+     headerTitleAlign: "center",
+
+  
+   }}
+   name="SignUpScreenB" component={SignUpScreenB} />
+
+ <Stack.Screen
+   options={{
+     // title:"My DashBoad",
+     headerStyle: {
        backgroundColor: "#FD513B",
        borderRadius: 0,
        shadowColor: "#000000",
@@ -100,61 +111,63 @@ const  Stack = createStackNavigator()
          height: 1,
          width: 0
        }
-    },
-    headerTintColor:"white",
-    headerTitleAlign:"center",
+     },
+     headerTintColor: "white",
+     headerTitleAlign: "center",
+
   
-           
-  }}
-   name="WallPage" component={WallPage}/>
-   
-<Stack.Screen 
+   }}
+   name="WallPage" component={WallPage} />
+
+ <Stack.Screen
    options={{
-    // title:"My DashBoad",
-    headerStyle:{
-      backgroundColor:"#FD513B"
-    },
-    headerTintColor:"white",
-    headerTitleAlign:"center",
+     // title:"My DashBoad",
+     headerStyle: {
+       backgroundColor: "#FD513B"
+     },
+     headerTintColor: "white",
+     headerTitleAlign: "center",
+
   
-           
-  }}
-   name="DetailsScreen" component={DetailsScreen}/>
+   }}
+   name="DetailsScreen" component={DetailsScreen} />
+
+ <Stack.Screen
+   options={{
+     // title:"My DashBoad",
+     headerStyle: {
+       backgroundColor: "#FD513B"
+     },
+     headerTintColor: "white",
+     headerTitleAlign: "center",
+
+  
+   }}
+   name="PaymentScreen" component={PaymentScreen} />
+
+
+ <Stack.Screen
+   options={{
+
+     headerStyle: {
+       backgroundColor: "#FD513B"
+     },
+     headerTintColor: "white",
+     headerTitleAlign: "center",
+
+  
+   }}
+   name="ThankYouScreen" component={ThankYouScreen} />
+            </Stack.Navigator>
+
+          }
       
-<Stack.Screen 
-   options={{
-    // title:"My DashBoad",
-    headerStyle:{
-      backgroundColor:"#FD513B"
-    },
-    headerTintColor:"white",
-    headerTitleAlign:"center",
-  
-           
-  }}
-   name="PaymentScreen" component={PaymentScreen}/>
-
-      
-<Stack.Screen 
-   options={{
-    
-    headerStyle:{
-      backgroundColor:"#FD513B"
-    },
-    headerTintColor:"white",
-    headerTitleAlign:"center",
-  
-           
-  }}
-   name="ThankYouScreen" component={ThankYouScreen}/>
-
-</Stack.Navigator>
-
-        </NavigationContainer>
+      </NavigationContainer>
     
     
-  );
-}
+    );
+  }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -164,3 +177,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const mapStateToProp = (state)=> {
+  return{ auth:state}
+}
+
+export default connect(mapStateToProp) (AppContainer)

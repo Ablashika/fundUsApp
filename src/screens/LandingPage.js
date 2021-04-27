@@ -12,10 +12,10 @@ function LandingPage ({navigation}){
         
      <View style={styles.container}>            
      
-     <ImageBackground source={afrcan} style={styles.image}>
+     {/* <ImageBackground source={afrcan} style={styles.image}>
 
 
-     </ImageBackground>
+     </ImageBackground> */}
      <Text style={styles.fundusText}>FundUs</Text>
      
      <View style={styles.boxContainer}>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
       flex: 5,
       justifyContent:"center",
        alignItems: "center",
-      marginTop:40,
+      marginTop:20,
 
    },
 
@@ -102,7 +102,8 @@ const styles = StyleSheet.create({
        fontWeight:"400",
        color:"#ffffff",
        fontSize: 70,
-       marginTop:10
+       marginTop: 100,
+       marginBottom: 40
    },
 
    learnMoreText :{

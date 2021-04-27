@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { connect } from "react-redux";
 import {createEmailAccount,SignUpError} from '../redux/actions/authActions'
 
@@ -32,7 +33,9 @@ import {createEmailAccount,SignUpError} from '../redux/actions/authActions'
     const {navigation, auth } = this.props;
       return (
       
-      <View style={styles.mainContainer}>
+      
+        <View style={styles.mainContainer}>
+          <ScrollView showsVerticalScrollIndicator='true' >
         
         <View style={styles.welcomeText}>
           <Text style={{ fontSize: 40, fontWeight: 'bold', }}> WELCOME!</Text>
@@ -46,12 +49,13 @@ import {createEmailAccount,SignUpError} from '../redux/actions/authActions'
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "space-between"
-        }}>
+          }}>
+            
           <Text style={{
             fontWeight: "bold",
             fontSize: 15,
             marginHorizontal: 35,
-            marginBottom: 7
+            marginBottom: 5
           }}>Email</Text>
           <TextInput style={{
             alignSelf: 'center',
@@ -91,8 +95,8 @@ import {createEmailAccount,SignUpError} from '../redux/actions/authActions'
           <TextInput style={{
             alignSelf: 'center',
             justifyContent: 'center',
-            marginHorizontal: 30,
-            // marginBottom: 20,
+            marginHorizontal: 35,
+              marginBottom: 20,
             borderColor: 'gray',
             backgroundColor: '#E2E6EE',
             borderRadius: 10,
@@ -138,15 +142,15 @@ import {createEmailAccount,SignUpError} from '../redux/actions/authActions'
             placeholderTextColor="#aaaaaa"
             placeholder=" confirm Password"
             value={this.state.confirmPassword}
-            onChangeText={(text) => { this.handleUpdateState('password', text) }} 
+            onChangeText={(text) => { this.handleUpdateState('confirmPassword', text) }} 
             secureTextEntry={true}
           />
         </View>
         <View>
-          <TouchableOpacity onPress={() => {
-            this.handleOnSubmit}}
+          <TouchableOpacity onPress={
+            this.handleOnSubmit}
             style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Confirm</Text>
+            <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
 
@@ -173,10 +177,13 @@ import {createEmailAccount,SignUpError} from '../redux/actions/authActions'
             navigation.navigate('LogInScreen')
           }} >
             <Text style={styles.SignUpText}>Sign in</Text>
-          </TouchableOpacity>
+              </TouchableOpacity>
+             
 
-        </View>
-      </View>
+            </View>
+            </ScrollView>
+          </View>
+          
     )
   }
 }
@@ -186,7 +193,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignContent: 'center',
     justifyContent: 'center',
-    backgroundColor:'#FFFCF0'
+    backgroundColor:'white'
        
     },
     heading: {
@@ -206,15 +213,15 @@ const styles = StyleSheet.create({
     buttonContainer: {
         height: 40,
         width: 217,
-        backgroundColor: "#FFFCF0",
+        backgroundColor: "white",
         justifyContent: "center",
       alignSelf: "center",
         alignContent:'center',
-        borderRadius: 100,
+        borderRadius: 15,
         // marginLeft: 20,
         marginTop:60,
       marginBottom: 20,
-      borderWidth: 2,
+      borderWidth: 1,
         borderColor:'#FD513B'
     },
     buttonText: {

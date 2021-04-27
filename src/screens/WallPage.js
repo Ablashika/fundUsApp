@@ -14,41 +14,12 @@ function WallPage ({navigation}){
         
      <View style={styles.container}>            
      
-       <View style={styles.redContainer}>            
        
-         {/* <Text style={{ color:"white", fontWeight:"bold"}}>Find A cause</Text> */}
-
-  
-       </View>
       <ScrollView>
         <View style={{ flex:4, justifyContent:"center", alignItems:"center", marginTop:-10}}>
 
  
-           <View style={styles.imagebox}>
-    
-              <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
-
-  
-              </ImageBackground> 
-                <View style={styles.textShow}>
-    
-                     <Text style={styles.textOp}>Fashion Design</Text>
-                     <Text style={styles.textO}>Help SIISI get back on her feet lorem ipsum or  </Text>
-
-              <TouchableOpacity 
-                  onPress={()=>{
-                    navigation.navigate("DetailsScreen")
-                   }}
-                  style={styles.containerText}>
-              <Text>View Project</Text>
-           </TouchableOpacity>
-         
-    
-  </View>
-  
-   
-  
-    </View> 
+           
    <View style={styles.imagebox}>
     
     <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
@@ -60,15 +31,15 @@ function WallPage ({navigation}){
          <Text style={styles.textOp}>Fashion Design</Text>
          <Text style={styles.textO}>Help iss get back on her feet</Text>
 
-         <TouchableOpacity style={styles.containerText}><Text>View Project</Text></TouchableOpacity>
+         <TouchableOpacity style={styles.containerText}><Text style={styles.text}>View Project</Text></TouchableOpacity>
          
     
   </View>
   
    
   
-    </View> 
-  <View style={styles.imagebox}>
+            </View>
+            <View style={styles.imagebox}>
     
     <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
 
@@ -79,17 +50,15 @@ function WallPage ({navigation}){
          <Text style={styles.textOp}>Fashion Design</Text>
          <Text style={styles.textO}>Help iss get back on her feet</Text>
 
-         <TouchableOpacity style={styles.containerText}><Text>View Project</Text></TouchableOpacity>
+         <TouchableOpacity style={styles.containerText}><Text style={styles.text}>View Project</Text></TouchableOpacity>
          
     
   </View>
   
    
   
-    </View> 
-  
-
-     <View style={styles.imagebox}>
+            </View>
+            <View style={styles.imagebox}>
     
     <ImageBackground source={afrcan}  style={styles.image} imageStyle={{ borderRadius: 20}} >
 
@@ -100,17 +69,16 @@ function WallPage ({navigation}){
          <Text style={styles.textOp}>Fashion Design</Text>
          <Text style={styles.textO}>Help iss get back on her feet</Text>
 
-                <TouchableOpacity style={styles.containerText}>
-                  <Text style={styles.project}>View Project</Text>
-                </TouchableOpacity>
+         <TouchableOpacity style={styles.containerText}><Text style={styles.text}>View Project</Text></TouchableOpacity>
          
     
   </View>
   
    
   
-    </View>
+    </View> 
 
+     
     
   
    
@@ -120,8 +88,8 @@ function WallPage ({navigation}){
 
   </ScrollView>
         <View elevation={5} style={{
-          flex: 2, backgroundColor: "#FFFCF0", marginTop: -80, justifyContent: "center",
-          borderRadius: 100,
+           backgroundColor: "#FFFCF0", marginTop: -80, justifyContent: "center",
+          borderRadius: 15,
           shadowColor: "#000000",
           shadowOpacity: 3,
           shadowRadius: 2,
@@ -152,28 +120,26 @@ const styles = StyleSheet.create({
     
     },
 
-    redContainer:{
-      flex:1
-    },
-
+   
 
 
     image:{
         
         height:350,
         width:320,
-        justifyContent:"center",
+        // justifyContent:"center",
         // resizeMode: "cover",
        
-        opacity:0.5
+      opacity: 0.5,
+      marginTop:17
       },
 
       imagebox:{
         height:360,
         width:320,
-        justifyContent:"center",
+        // justifyContent:"center",
         // margin:20,
-        alignContent:"center",
+        // alignContent:"center",
        
         
 
@@ -185,7 +151,7 @@ const styles = StyleSheet.create({
       textShow:{
           height:300,
         //   backgroundColor:"blue",
-         marginTop:-200,
+         marginTop:-110,
          marginLeft:20,
         //  flexDirection:"column",
          borderRadius:30,
@@ -212,29 +178,31 @@ const styles = StyleSheet.create({
 
     containerText:{
         backgroundColor:"#FD513B",
-        marginLeft:20,
-        marginTop:30,
+        // marginLeft:4,
+        marginTop:10,
         height:40,
         width:100,
         borderRadius:30,
         justifyContent:"center",
       alignItems: "center",
-        // color:'white',
+        color:'white',
     },
 
     lastBox:{
         flexDirection:"row",
         alignItems:"center",
         justifyContent:"center",
-        width:400,
-        height:100,
+        width:'100%',
+        height:50,
       justifyContent: "space-evenly",
+      marginVertical:10
         
         
        
   },
-  project: {
-      color:'blue'
+  text: {
+    color: 'white',
+    fontWeight:"bold",
     }
     
    

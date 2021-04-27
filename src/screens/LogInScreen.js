@@ -107,12 +107,9 @@ class LogInScreen extends Component {
 
         <View>
           <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("WallPage")
-            }}
+            onPress={this.handleOnSubmit}
             style={styles.buttonContainer}>
             <Text style={styles.buttonText}
-              OnPress={this.handleOnSubmit}
             >sign in</Text>
           </TouchableOpacity>
         </View>
@@ -125,7 +122,11 @@ class LogInScreen extends Component {
           <TouchableOpacity onPress={() => {
             navigation.navigate('LogInScreen')
           }} >
-            <Text style={styles.SignUpText}>Sign up</Text>
+            <Text
+              onPress={()=>{
+                navigation.navigate("SignUpScreen")
+           }}
+              style={styles.SignUpText}>Sign up</Text>
           </TouchableOpacity>
 
         </View>
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignContent: 'center',
     justifyContent: 'center',
-    backgroundColor:'#FFFCF0'
+    backgroundColor:'white'
        
     },
     heading: {
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         height: 40,
         width: 215,
-        backgroundColor: "#FD513B",
+        backgroundColor: "white",
         justifyContent: "center",
       alignSelf: "center",
         alignContent:'center',
@@ -167,14 +168,15 @@ const styles = StyleSheet.create({
         // marginLeft: 20,
         marginTop:80,
       marginBottom: 5,
-      borderWidth: 2,
+      borderWidth: 1,
         borderColor:'#FD513B'
     },
     buttonText: {
         color: "#FFFCF0",
         fontSize: 20,
       alignSelf: 'center',
-        fontWeight:'bold'
+      fontWeight: 'bold',
+        color:'#FD513B'
     },
     forgotPassword: {
         flexDirection: "row",
@@ -185,9 +187,9 @@ const styles = StyleSheet.create({
   welcomeText:{
     alignSelf: 'center',
     marginVertical: 60,
-    justifyContent: 'center',
+      justifyContent: 'center',
     alignItems: "center",
-    marginTop:30
+    marginTop:10
     
     
   },
