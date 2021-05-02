@@ -6,7 +6,8 @@ import RNWeb from '../screens/RNWeb'
 
 
 
-function PaymentScreen() {
+
+function PaymentScreen({navigation}) {
 
     const  [momoUri, setMomoUri] = useState(null);
 
@@ -33,7 +34,7 @@ function PaymentScreen() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: 'Bearer FLWSECK-fa78c54835861c84a79271fc6d9b95fe-X',
+                    Authorization: 'Bearer FLWSECK_TEST-b300859b27e75571299b7beb31bd2e56-X ',
                     
                 },
 
@@ -56,8 +57,10 @@ function PaymentScreen() {
 
     }
 
-    function closeWebView() {
+    function closeWebView() {      
         setMomoUri(null);
+        navigation.navigate("ThankYouScreen")
+        
     }
 
 
@@ -95,12 +98,7 @@ function PaymentScreen() {
                 </View>
 
                 <View>
-          <TouchableOpacity onPress={()=>{
-                navigation.navigate("ThankYouScreen")
-           }}
-            style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Submit</Text>
-          </TouchableOpacity>
+
         </View>
 
 
