@@ -250,7 +250,7 @@ function WallPage({ navigation, businesses }) {
                       imageStyle={{ borderRadius: 20 }}
                     ></ImageBackground>
                     <View style={styles.textShow}>
-                      <Text style={styles.textOp}>{item.title}</Text>
+                      <Text style={styles.textOp}>{item.title1}</Text>
                       <Text style={styles.textO}>{item.story}</Text>
 
                       <TouchableOpacity
