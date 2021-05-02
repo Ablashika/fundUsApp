@@ -31,7 +31,11 @@ function WallPage ({navigation}){
          <Text style={styles.textOp}>Fashion Design</Text>
          <Text style={styles.textO}>Help iss get back on her feet</Text>
 
-         <TouchableOpacity style={styles.containerText}><Text style={styles.text}>View Project</Text></TouchableOpacity>
+                <TouchableOpacity
+                   onPress={()=>{
+                    navigation.navigate("DetailsScreen")
+               }}
+                  style={styles.containerText}><Text style={styles.text}>View Project</Text></TouchableOpacity>
          
     
   </View>
@@ -50,7 +54,11 @@ function WallPage ({navigation}){
          <Text style={styles.textOp}>Fashion Design</Text>
          <Text style={styles.textO}>Help iss get back on her feet</Text>
 
-         <TouchableOpacity style={styles.containerText}><Text style={styles.text}>View Project</Text></TouchableOpacity>
+                <TouchableOpacity
+                   onPress={()=>{
+                    navigation.navigate("dashBoard")
+               }}
+                  style={styles.containerText}><Text style={styles.text}>View Project</Text></TouchableOpacity>
          
     
   </View>

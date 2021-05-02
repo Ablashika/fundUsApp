@@ -107,7 +107,10 @@ class LogInScreen extends Component {
 
         <View>
           <TouchableOpacity
-            onPress={this.handleOnSubmit}
+            // onPress={this.handleOnSubmit}
+            onPress={()=>{
+              navigation.navigate("DashBoard")
+         }}
             style={styles.buttonContainer}>
             <Text style={styles.buttonText}
             >sign in</Text>

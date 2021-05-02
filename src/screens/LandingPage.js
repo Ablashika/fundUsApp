@@ -12,11 +12,11 @@ function LandingPage ({navigation}){
         
      <View style={styles.container}>            
      
-     {/* <ImageBackground source={afrcan} style={styles.image}>
+     <ImageBackground source={afrcan} style={styles.image}>
 
 
-     </ImageBackground> */}
-     <Text style={styles.fundusText}>FundUs</Text>
+     </ImageBackground>
+     <Text style={styles.fundusText}>FundME.</Text>
      
      <View style={styles.boxContainer}>
 
@@ -32,7 +32,11 @@ function LandingPage ({navigation}){
                      I am a business owner
                  </Text>
              </TouchableOpacity>
-             <TouchableOpacity style={styles.signUpBox}>
+                <TouchableOpacity
+                    onPress={()=>{
+                        navigation.navigate("WallPage")
+                   }}
+                    style={styles.signUpBox}>
                  <Text style={{fontWeight:"bold"}}>
                     Here to support!
                  </Text>
