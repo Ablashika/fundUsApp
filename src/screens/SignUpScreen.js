@@ -143,7 +143,8 @@ import {createEmailAccount,SignUpError} from '../redux/actions/authActions'
             placeholder=" confirm Password"
             value={this.state.confirmPassword}
             onChangeText={(text) => { this.handleUpdateState('confirmPassword', text) }} 
-            secureTextEntry={true}
+                secureTextEntry={true}
+                
           />
         </View>
         <View>
