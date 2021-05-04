@@ -11,20 +11,19 @@ import { connect } from "react-redux";
 import { createEmailAccount } from "../redux/actions/authActions";
 
 function SignUpScreen({ navigation }) {
-  //   const [details, setDetails] = useState({
-  //     email:"",
-  //     password:"",
-  //     // passwordAgain:""
+  const [details, setDetails] = useState({
+    email: "",
+    password: "",
+    // passwordAgain:""
+  });
 
-  //  });
+  const handleUpdateState = (name, value) => {
+    setDetails({ ...details, [name]: value });
+  };
 
-  // const handleUpdateState = (name, value) => {
-  //   setDetails({ ...details, [name]: value });
-  // };
-
-  //  const handleOnsubmit = () =>{
-  //     createEmailAccount(details.email,details.password)
-  //  }
+  const handleOnsubmit = () => {
+    createEmailAccount(details.email, details.password);
+  };
 
   return (
     <View style={styles.mainContainer}>
@@ -162,7 +161,8 @@ function SignUpScreen({ navigation }) {
       <View>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("LogInScreen");
+            handleOnsubmit(handleOnsubmit);
+            navigation.navigate("DashBoard");
           }}
           style={styles.buttonContainer}
         >

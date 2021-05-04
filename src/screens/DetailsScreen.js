@@ -42,7 +42,7 @@ function DetailsScreen({ navigation, businesses }) {
             >
               <View style={styles.sissBox}>
                 <Text style={{ marginTop: 20, fontWeight: "bold" }}>
-                  {item.name}
+                  {item.titlr}
                 </Text>
                 <Text>{item.story}</Text>
               </View>
