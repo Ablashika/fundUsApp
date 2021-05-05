@@ -354,7 +354,7 @@ const styles = StyleSheet.create({
   },
 
   textOp: {
-    color: "white",
+    color: "black",
     // marginLeft:20,
     // marginTop:30
   },
