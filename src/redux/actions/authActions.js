@@ -6,10 +6,10 @@ export function createEmailAccount(email, password) {
       const user = await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password);
-      console.log(user);
+
       dispatch(loggedIn(user));
     } catch (error) {
-      dispatch(SignUpError(error.message));
+      console.log(error);
     }
   };
 }
@@ -23,17 +23,34 @@ export function loginEmailAccount(email, password) {
       console.log(user);
       dispatch(loggedIn(user));
     } catch (error) {
-      dispatch(loginError(error.message));
+      console.log(error);
     }
   };
 }
+
+// export function loginEmailAccount(email, password) {
+//     return async (dispatch) => {
+//         try {
+//             const user = await firebase
+//                 .auth()
+//                 .signInWithEmailAndPassword(email, password)
+//             console.log(user )
+//             dispatch(loggedIn(user))
+//         } catch (error) {
+//             dispatch (loginError(error.message))
+//         }
+//     }
+
+// }
 
 export function logout() {
   return async (dispatch) => {
     try {
       await firebase.auth().signOut();
       dispatch(loggedOut());
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 
@@ -46,19 +63,6 @@ function loggedIn(user) {
 
 function loggedOut() {
   return {
-    type: "LOGGED_OUT ",
-  };
-}
-export function SignUpError(error) {
-  return {
-    type: "SIGNUP_ERROR",
-    payload: error,
-  };
-}
-
-export function loginError(error) {
-  return {
-    type: "LOGIN_ERROR",
-    payload: error,
+    type: "LOGGED_OUT",
   };
 }

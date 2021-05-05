@@ -3,6 +3,7 @@
     "name": "fundUsApp",
     "slug": "fundUsApp",
     "version": "1.0.0",
+    "sdkVersion":"40.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,7 +18,10 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-xxxxxx"
+      }
     },
     "android": {
       "adaptiveIcon": {

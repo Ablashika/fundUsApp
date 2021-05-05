@@ -1,169 +1,168 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 import {
-    StyleSheet, Text, View, Image, TextInput, TouchableOpacity, FlatList,
-} from 'react-native';
-import africanshop from "../../assets/africanshop.jpg"
-import * as Progress from 'react-native-progress';
-import { Entypo } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-import Share from "../components/Share3";
-import { ScrollView } from 'react-native-gesture-handler';
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
+import africanshop from "../../assets/africanshop.jpg";
+import * as Progress from "react-native-progress";
+import { getBusinesses } from "../redux/actions/userActions";
+import { connect, useDispatch } from "react-redux";
 
+function DetailsScreen({
+  navigation,
+  businesses,
+  route: {
+    params: { item_details },
+  },
+}) {
+  const dispatch = useDispatch();
+  console.log("Details => ", item_details);
 
+  useEffect(() => {
+    console.log(dispatch);
+    getBusinesses(dispatch);
+  }, []);
 
+  return (
+    <View style={styles.container}>
+      <View style={styles.imagebox}>
+        <Image source={africanshop} style={styles.image}></Image>
+      </View>
+      <View style={{ height: 100, width: 400 }}>
+        <View
+          style={{
+            height: 100,
+            width: 400,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <View style={styles.sissBox}>
+            <Text style={{ marginTop: 20, fontWeight: "bold" }}>
+              {item_details.title}
+            </Text>
+            <Text>{item_details.story}</Text>
+            <Text
+              style={{
+                marginTop: 10,
+                marginBottom: 14,
+                fontWeight: "bold",
+              }}
+            >
+              goal:{item_details.goal}
+            </Text>
+          </View>
+        </View>
 
-
-function DetailsScreen({navigation}) {
-
-    return (
-
-        
-        
-            <View style={styles.container}>            
-            
-             <View style={styles.imagebox}>
-                 <Image source={africanshop}  style={styles.image} >
-                  </Image>
-                   </View>
-                   <View Style={styles.goal}>
-                       <Text style={{ fontSize: 15, fontWeight: "400", alignSelf: 'center', marginTop:20}}>Amount Raised:</Text>
-                       <Text style={{fontSize:19,fontWeight: 'bold',alignSelf:'center'}} >150gh</Text>
-                       <Progress.Bar style={styles.bar} progress={0.2} width={340} color={"#FD513B"} height={10} />
-                       <Text style={{fontSize:15,fontWeight: 'bold',alignSelf:'flex-end'}} >Goal:900gh</Text>
-       
-                   </View>
-        
-                       <View style={styles.textbox}>
-                       
-                          <Text  style={{ fontWeight:'bold',fontSize:22,marginVertical:17 ,alignSelf:'center'}}>{'Support Aunty Siisi get a new sewing machine.'}</Text>
-        
-                  
-                         <Text style={{fontSize:20,fontWeight: "bold",alignSelf:'flex-start',marginLeft:20}}>My Story:</Text>
-                         <Text style={{ fontSize:15, marginBottom:0, alignSelf: 'flex-start', marginHorizontal: 20 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at rutrum odio.
-                          Fusce convallis ultricies enim a tincidunt. Vivamus porttitor ipsum in turpis convallis,
-                          ac pellentesque nunc auctor. Phasellus aliquet gravida risus, quis ornare erat porta in.
-                          Cras lectus quam, dapibus euismod lectus quis, fermentum rutrum augue.
-                         </Text>
-                          
-            </View>
-            
-            <View style={styles.background}>
-                   
-
-                   <View style={styles.lastBox}>
-                <TouchableOpacity 
-                  onPress={()=>{
-                    navigation.navigate("PaymentScreen")
-                }}
-                style={{ height: 40, backgroundColor: "#FD513B", width: 180, justifyContent: "center", alignItems: "center", borderRadius: 15, fontWeight:'bold',marginTop:15 }}><Text style={{color:"white", fontWeight: 'bold',fontSize:15}}>SUPPORT</Text></TouchableOpacity>
-                </View>
-                <View>
-                     <Share/>
-                   </View>
-
-            </View>
-                    
-               
-       
-        
-        
-            
-        
-            
-       
-            
+        {/* <FlatList
+          numColumns={1}
+          horizontal={false}
+          data={businesses}
+          renderItem={({ item }) => (
            
-            
-       
-           
-       
-           </View>
-       
-       
-       )
-       }
-       
-       const styles = StyleSheet.create({
-           container: {
-              flex:1, 
-             backgroundColor: '#fff',
-             alignItems: 'center',
-           //   justifyContent: 'center',
-           
-           },
-       
-           
-           
-       
-           image:{
-               height:200,
-               width:370,
-               borderRadius: 15,
-               marginTop: 12,
-               shadowColor: '#202020',
-         shadowOffset: {width: 0, height: 0},
-         shadowRadius: 5,
-       
-           },
-       
-           textbox:{
-            //    flex:1,
-               // marginTop:2,
-               // height:20,
-               // width:400,
-               // backgroundColor:"blue",
-               // justifyContent:"center",
-               // alignItems: "flex-start",
-               marginBottom: 0,
-               
-           },
-       
-           lastBox:{
-               flexDirection:"row",
-            //    flex:0.5,
-               alignItems:"center",
-               justifyContent:"center",
-               width:400,
-               justifyContent:"space-evenly",
-               borderWidth:0.5,
-               borderColor: "grey",
-               // marginTop:-200
-           },
-           bar: {
-               marginTop: 20,
-               marginBottom:10
-           },
-           goal: {
-               justifyContent: 'center',
-               alignItems: 'center',
-               alignContent:'center'
-           },
-           share: {
-               flex:1
-           },
-           lastBox: {
-            flex: 1
-           },
-           background: {
-               marginTop: 20,
-               backgroundColor: "#F8ECEA",
-               width: 280,
-               height: 150,
-            //    alignContent: 'center',
-            //    justifyContent: 'center',
-               alignItems: 'center',
-               borderRadius: 15
-           }
-    
-    
-    
-       
-           
-       
-       
-             
-       }) 
-       
-       
-       export default DetailsScreen;
+          )}
+          keyExtractor={(item) => item.name}
+        /> */}
+      </View>
+      <View style={styles.textbox}>
+        <Text style={{ margin: 10 }}>amount raised</Text>
+        <Text style={{ marginTop: 10, fontWeight: "bold" }}> 150gh</Text>
+        <Progress.Bar
+          style={{ marginTop: 10 }}
+          progress={0.4}
+          width={250}
+          color={"#FD513B"}
+        />
+      </View>
+      <View style={styles.lastBox}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("PaymentScreen");
+          }}
+          style={{
+            height: 40,
+            backgroundColor: "#FD513B",
+            width: 100,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 20,
+          }}
+        >
+          <Text style={{ color: "white" }}>support</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  redContainer: {
+    backgroundColor: "#FD513B",
+    width: 400,
+    alignItems: "center",
+    justifyContent: "center",
+
+    flex: 0.8,
+  },
+  imagebox: {
+    flex: 2,
+    marginTop: 10,
+    height: 200,
+    width: 360,
+    width: 400,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  image: {
+    height: 200,
+    width: 350,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  textbox: {
+    flex: 1.4,
+    marginTop: 20,
+    height: 20,
+    width: 400,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  sissBox: {
+    backgroundColor: "white",
+    flex: 1,
+    width: 250,
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: -100,
+    flexDirection: "column",
+  },
+
+  lastBox: {
+    flex: 1,
+  },
+});
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state,
+    user: state,
+    businesses: state.businesses,
+  };
+};
+
+export default connect(mapStateToProps)(DetailsScreen);
