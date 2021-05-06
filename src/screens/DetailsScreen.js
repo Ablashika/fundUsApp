@@ -12,6 +12,10 @@ import africanshop from "../../assets/africanshop.jpg";
 import * as Progress from "react-native-progress";
 import { getBusinesses } from "../redux/actions/userActions";
 import { connect, useDispatch } from "react-redux";
+import Share from "../components/Share3";
+
+
+
 
 function DetailsScreen({
   navigation,
@@ -29,33 +33,31 @@ function DetailsScreen({
   }, []);
 
   return (
-    <View style={styles.container}>
+      <View style={styles.container}>
+          
       <View style={styles.imagebox}>
         <Image source={africanshop} style={styles.image}></Image>
       </View>
-      <View style={{ height: 100, width: 400 }}>
+      <View >
         <View
           style={{
             height: 100,
-            width: 400,
+            width: 370,
             justifyContent: "center",
-            alignItems: "center",
+                      alignItems: "center",
+            
           }}
         >
-          <View style={styles.sissBox}>
-            <Text style={{ marginTop: 20, fontWeight: "bold" }}>
+          <View >
+            <Text style={{  fontWeight:'bold',fontSize:18,marginVertical:10 ,alignSelf:'flex-start',color:'#FD513B',  }}>
               {item_details.title}
             </Text>
-            <Text>{item_details.story}</Text>
-            <Text
-              style={{
-                marginTop: 10,
-                marginBottom: 14,
-                fontWeight: "bold",
-              }}
+            <Text style={{ fontSize:15, marginBottom:0, alignSelf: 'flex-start' }}>{item_details.story}</Text>
+            {/* <Text
+              style={{fontSize:15,fontWeight: 'bold',alignSelf:'flex-end'}} 
             >
               goal:{item_details.goal}
-            </Text>
+            </Text> */}
           </View>
         </View>
 
@@ -69,33 +71,33 @@ function DetailsScreen({
           keyExtractor={(item) => item.name}
         /> */}
       </View>
-      <View style={styles.textbox}>
-        <Text style={{ margin: 10 }}>amount raised</Text>
-        <Text style={{ marginTop: 10, fontWeight: "bold" }}> 150gh</Text>
-        <Progress.Bar
-          style={{ marginTop: 10 }}
-          progress={0.4}
-          width={250}
-          color={"#FD513B"}
-        />
-      </View>
-      <View style={styles.lastBox}>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("PaymentScreen");
-          }}
-          style={{
-            height: 40,
-            backgroundColor: "#FD513B",
-            width: 100,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 20,
-          }}
-        >
-          <Text style={{ color: "white" }}>support</Text>
-        </TouchableOpacity>
-      </View>
+      <View Style={styles.goal}>
+                       <Text style={{ fontSize: 15, fontWeight: "400", alignSelf: 'center', marginTop:20}}>Amount Raised:</Text>
+                       <Text style={{fontSize:19,fontWeight: 'bold',alignSelf:'center'}} >1500gh</Text>
+                       <Progress.Bar style={styles.bar} progress={0.2} width={340} color={"#FD513B"} height={10} />
+                       <Text
+              style={{fontSize:25,fontWeight: 'bold',alignSelf:'flex-end',color:'green'}} 
+            >
+              goal:{item_details.goal}
+            </Text>
+                   </View>
+        
+                   <View style={styles.background}>
+                   
+
+                   <View style={styles.lastBox}>
+                <TouchableOpacity 
+                  onPress={()=>{
+                    navigation.navigate("PaymentScreen")
+                }}
+                style={{ height: 40, backgroundColor: "#FD513B", width: 180, justifyContent: "center", alignItems: "center", borderRadius: 15, fontWeight:'bold',marginTop:15 }}><Text style={{color:"white", fontWeight: 'bold',fontSize:15}}>SUPPORT</Text></TouchableOpacity>
+                </View>
+                <View>
+                     <Share/>
+                   </View>
+
+            </View>
+           
     </View>
   );
 }
@@ -128,9 +130,10 @@ const styles = StyleSheet.create({
 
   image: {
     height: 200,
-    width: 350,
+    width: 370,
     justifyContent: "center",
-    alignItems: "center",
+      alignItems: "center",
+    borderRadius:15
   },
 
   textbox: {
@@ -144,17 +147,45 @@ const styles = StyleSheet.create({
 
   sissBox: {
     backgroundColor: "white",
-    flex: 1,
-    width: 250,
+    // flex: 1,
+    // width: 250,
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: -100,
-    flexDirection: "column",
+    // marginLeft: -100,
+    // flexDirection: "column",
   },
 
   lastBox: {
     flex: 1,
-  },
+    },
+    background: {
+        marginTop: 20,
+        backgroundColor: "#F8ECEA",
+        width: 280,
+        height: 150,
+     //    alignContent: 'center',
+     //    justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 15
+    },
+    bar: {
+        marginTop: 20,
+        marginBottom:10
+    },
+    goal: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent:'center'
+    },
+    share: {
+        flex:1
+    },
+    lastBox: {
+     flex: 1
+    },
+    
+
+
 });
 
 const mapStateToProps = (state) => {

@@ -73,5 +73,17 @@ const styles = StyleSheet.create({
     },
     title: {
       fontSize:20
-  }
+  },
+  background: {
+    marginTop: 20,
+    backgroundColor: "#F8ECEA",
+    width: 280,
+    height: 150,
+ //    alignContent: 'center',
+ //    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 15
+}
+
+
 })

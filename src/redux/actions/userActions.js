@@ -1,5 +1,5 @@
 import { firestore } from "firebase";
-import firebase from "../../firebase/firebase";
+import firebase from "../../Firebase/firebase";
 const db = firebase.firestore();
 
 export function addUser(name, location, title, story, goal) {
