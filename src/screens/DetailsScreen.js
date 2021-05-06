@@ -43,8 +43,9 @@ function DetailsScreen({
           style={{
             height: 100,
             width: 370,
-            justifyContent: "center",
-                      alignItems: "center",
+            // justifyContent: "center",
+                      alignItems: "flex-start",
+                      marginLeft: 25
             
           }}
         >
@@ -90,7 +91,7 @@ function DetailsScreen({
                   onPress={()=>{
                     navigation.navigate("PaymentScreen")
                 }}
-                style={{ height: 40, backgroundColor: "#FD513B", width: 180, justifyContent: "center", alignItems: "center", borderRadius: 15, fontWeight:'bold',marginTop:15 }}><Text style={{color:"white", fontWeight: 'bold',fontSize:15}}>SUPPORT</Text></TouchableOpacity>
+                style={{ height: 40, backgroundColor: "#FD513B", width: 180, justifyContent: "center", alignItems: "center", borderRadius: 15, fontWeight:'bold',marginTop:35 }}><Text style={{color:"white", fontWeight: 'bold',fontSize:15}}>SUPPORT</Text></TouchableOpacity>
                 </View>
                 <View>
                      <Share/>
@@ -122,27 +123,28 @@ const styles = StyleSheet.create({
     flex: 2,
     marginTop: 10,
     height: 200,
-    width: 360,
-    width: 400,
+    // width: 340,
+    // width: 400,
     alignItems: "center",
     justifyContent: "center",
   },
 
   image: {
     height: 200,
-    width: 370,
+    width: 350,
     justifyContent: "center",
       alignItems: "center",
-    borderRadius:15
+      borderRadius: 15,
+    
   },
 
   textbox: {
     flex: 1.4,
-    marginTop: 20,
-    height: 20,
-    width: 400,
-    justifyContent: "center",
-    alignItems: "center",
+    // marginTop: 20,
+    // height: 20,
+    // width: 400,
+    // justifyContent: "center",
+    // alignItems: "center",
   },
 
   sissBox: {
@@ -155,34 +157,33 @@ const styles = StyleSheet.create({
     // flexDirection: "column",
   },
 
-  lastBox: {
-    flex: 1,
-    },
+  
     background: {
-        marginTop: 20,
+        marginTop: 10,
         backgroundColor: "#F8ECEA",
         width: 280,
         height: 150,
-     //    alignContent: 'center',
-     //    justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 15
-    },
-    bar: {
-        marginTop: 20,
-        marginBottom:10
-    },
-    goal: {
+        alignContent: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        alignContent:'center'
+        borderRadius: 15,
+        alignSelf:'center'
     },
+    bar: {
+       marginVertical:10
+    },
+    // goal: {
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     alignContent:'center'
+    // },
     share: {
         flex:1
     },
     lastBox: {
-     flex: 1
-    },
+        
+    }
+   
     
 
 

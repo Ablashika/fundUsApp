@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   borderWidth: 1,
         borderColor: '#FD513B',
         color: "#FFF",
-        marginTop:15
+         marginTop:15
 
         
   },
@@ -74,16 +74,16 @@ const styles = StyleSheet.create({
     title: {
       fontSize:20
   },
-  background: {
-    marginTop: 20,
-    backgroundColor: "#F8ECEA",
-    width: 280,
-    height: 150,
- //    alignContent: 'center',
- //    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 15
-}
-
+     background: {
+               marginTop: 20,
+               backgroundColor: "#F8ECEA",
+               width: 280,
+               height: 150,
+            //    alignContent: 'center',
+            //    justifyContent: 'center',
+               alignItems: 'center',
+               borderRadius: 15
+           }
+    
 
 })

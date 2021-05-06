@@ -58,7 +58,7 @@ function LogInScreen({ navigation }) {
           onChangeText={(text) => {
             handleUpdateState("email", text);
           }}
-          placeholderTextColor="gray"
+          placeholderTextColor="black"
           placeholder=" magnacarter@gmail.com"
           style={{
             alignSelf: "center",
@@ -107,13 +107,14 @@ function LogInScreen({ navigation }) {
             borderRadius: 10,
             width: 312,
             height: 35,
+            fontSize:40
           }}
           value={details.password}
           onChangeText={(text) => {
             handleUpdateState("password", text);
           }}
-          placeholderTextColor="#aaaaaa"
-          placeholder="Password"
+          placeholderTextColor="black"
+          placeholder=" ....."
           secureTextEntry={true}
         />
       </View>

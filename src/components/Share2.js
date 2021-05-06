@@ -45,11 +45,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     // marginLeft: 20,
     // marginTop:60,
-  marginBottom: 20,
+  // marginBottom: 20,
   borderWidth: 1,
         borderColor: '#FD513B',
         color: "#FFF",
-        marginTop: 90,
+        // marginTop: 90,
         
   },
   buttonText: {

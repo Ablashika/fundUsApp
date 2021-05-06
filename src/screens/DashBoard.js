@@ -43,42 +43,45 @@ function Dashboard({ navigation, businesses }) {
           horizontal={false}
           data={businesses}
           renderItem={({ item }) => (
-            <View style={{ marginBottom: 5 }}>
+            <View >
               <Text
                 style={{
                   alignSelf: "flex-start",
-                  marginHorizontal: 20,
+                  marginBottom: 7,
                   fontWeight: "bold",
+                  fontSize: 18,
+
                 }}
               >
                 {item.name}
               </Text>
               <Text
                 style={{
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: "bold",
                   alignSelf: "flex-start",
-                  marginLeft: 20,
+                  // marginLeft: 20,
                 }}
               >
                 My Story:
               </Text>
               <Text
                 style={{
-                  fontSize: 15,
-                  marginBottom: 30,
+                  fontSize: 16,
+                  // fontWeight: "bold",
                   alignSelf: "flex-start",
-                  marginHorizontal: 20,
+                  // marginLeft: 20,
                 }}
               >
                 {item.story}
               </Text>
               <Text
                 style={{
-                  marginTop: -20,
+                  marginTop: 20,
                   fontWeight: "bold",
                   alignSelf: "flex-start",
-                  marginHorizontal: 20,
+                  // marginHorizontal: 20,
+                  marginBottom: 7
                 }}
               >
                 Goal:{item.goal}
@@ -89,13 +92,10 @@ function Dashboard({ navigation, businesses }) {
         />
       </View>
       <View style={styles.textbox}>
-        <Text style={{ margin: 5 }}>amount raised</Text>
-        <Text style={{ marginTop: 5, fontWeight: "bold" }}> 150gh</Text>
+        <Text >amount raised</Text>
+        <Text style={{  fontWeight: "bold" }}> 150gh</Text>
         <Progress.Bar
-          style={{ marginTop: 10 }}
-          progress={0.4}
-          width={250}
-          color={"#FD513B"}
+         style={styles.bar} progress={0.2} width={340} color={"#FD513B"} height={10}
         />
       </View>
 
@@ -146,18 +146,18 @@ const styles = StyleSheet.create({
   },
 
   share: {
-    flex: 1.2,
-    marginTop: 140,
-    height: 80,
+    flex: 1,
+    marginTop: 100,
+    // height: 80,
     // justifyContent: "center",
-    alignItems: "center",
+    // alignItems: "center",
     // backgroundColor: "blue",
   },
 
   imagebox: {
     flex: 1,
-    borderRadius: 100,
-    marginTop: 30,
+    borderRadius: 20,
+    marginTop: 10,
     height: 180,
     width: 300,
     // backgroundColor: "red",
@@ -165,16 +165,18 @@ const styles = StyleSheet.create({
 
   image: {
     height: 200,
-    width: 300,
-    borderRadius: 30,
+    width: 350,
+    borderRadius: 15,
+    alignContent: 'center',
+    alignSelf:'center'
   },
 
   textbox: {
     // backgroundColor: "red",
     flex: 1.1,
-    // marginTop: 80,
-    height: 120,
-    width: 400,
+    marginTop:-20,
+    // height: 120,
+    // width: 400,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -190,6 +192,10 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: "grey",
   },
+bar: {
+      marginTop: 20,
+      marginBottom: 10,
+    },
 });
 
 const mapStateToProps = (state) => {

@@ -224,9 +224,7 @@ function WallPage({ navigation, businesses }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.redContainer}>
-        {/* <Text style={{ color:"white", fontWeight:"bold"}}>Find A cause</Text> */}
-      </View>
+      
       <View>
         <FlatList
           numColumns={1}
@@ -261,7 +259,7 @@ function WallPage({ navigation, businesses }) {
                         }}
                         style={styles.containerText}
                       >
-                        <Text>View Project</Text>
+                        <Text style={styles.project}>View Project</Text>
                       </TouchableOpacity>
                     </View>
                   </View>
@@ -279,7 +277,7 @@ function WallPage({ navigation, businesses }) {
           backgroundColor: "#FFFCF0",
           marginTop: -80,
           justifyContent: "center",
-          borderRadius: 100,
+          // borderRadius: 100,
           shadowColor: "#000000",
           shadowOpacity: 3,
           shadowRadius: 2,
@@ -314,7 +312,7 @@ function WallPage({ navigation, businesses }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFCF0",
+    backgroundColor: "#FFF",
     alignItems: "center",
     justifyContent: "center",
     flex: 5,
@@ -326,35 +324,37 @@ const styles = StyleSheet.create({
 
   image: {
     height: 350,
-    width: 320,
+    width: 340,
     justifyContent: "center",
     // resizeMode: "cover",
     borderRadius: 20,
-    opacity: 0.6,
+    opacity: 0.4,
+    marginTop: 14,
+    backgroundColor: "#A7A3A3"
   },
 
   imagebox: {
-    borderRadius: 20,
-    backgroundColor: "white",
-    height: 320,
-    width: 320,
-    justifyContent: "center",
-    margin: 10,
-    alignContent: "center",
+    // borderRadius: 20,
+    // backgroundColor: "gray",
+    // height: 350,
+    // width: 320,
+    // justifyContent: "center",
+    // margin: 10,
+    // alignContent: "center",
   },
 
   textShow: {
-    height: 300,
+    height: 200,
     //   backgroundColor:"blue",
-    marginTop: -200,
+    marginTop: -150,
     marginLeft: 20,
     //  flexDirection:"column",
     borderRadius: 30,
-    alignContent: "center",
+    alignItems: 'flex-start',
   },
 
   textOp: {
-    color: "white",
+    color: "black",
     // marginLeft:20,
     // marginTop:30
   },
@@ -363,20 +363,21 @@ const styles = StyleSheet.create({
     color: "black",
     // marginLeft:20,
     // marginTop:30,
-    fontWeight: "bold",
-    fontSize: 20,
+    fontWeight: "700",
+    fontSize: 17,
   },
 
   containerText: {
-    backgroundColor: "white",
-    marginLeft: 20,
-    marginTop: 30,
+    backgroundColor: "#FD513B",
+    // marginLeft: 20,
+    marginTop: 15,
     height: 40,
     width: 100,
-    borderRadius: 30,
+    borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
     // color:'white',
+
   },
 
   lastBox: {
@@ -386,9 +387,14 @@ const styles = StyleSheet.create({
     width: 400,
     height: 100,
     justifyContent: "space-evenly",
+    backgroundColor: "#FFF",
+    borderWidth: 0.5,
+        borderColor: "grey",
+    
   },
   project: {
-    color: "blue",
+    color: "black",
+    fontWeight: "bold"
   },
 });
 
